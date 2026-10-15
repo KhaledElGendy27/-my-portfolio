@@ -2,240 +2,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#020817">
-  <meta name="description" content="Khaled ElGendy - Information Systems Student and Frontend Developer in progress.">
-  <title>Khaled ElGendy | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060816">
+<title>Khaled ElGendy | Frontend Developer</title>
+<meta name="description" content="The personal portfolio of Khaled ElGendy, Information Systems student learning Frontend Development.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #060816;
+  --panel: #0d1226;
+  --blue: #61a8ff;
+  --cyan: #62f0e1;
+  --text: #f5f7ff;
+  --muted: #969fb9;
+  --border: rgba(160,180,255,.14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(48,93,210,.17), transparent 35%),
+    radial-gradient(ellipse at 85% 45%, rgba(28,194,210,.08), transparent 32%);
+}
+
+a { color: inherit; text-decoration: none; }
+.container { width: min(1120px, 90%); margin: auto; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(6,8,22,.86);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+
+nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo { font-size: 24px; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--cyan); }
+
+.nav-links { display: flex; gap: 26px; flex-wrap: wrap; }
+.nav-links a { color: var(--muted); font-size: 13px; transition: .25s; }
+.nav-links a:hover { color: var(--cyan); }
+
+.hero {
+  min-height: 660px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 60px;
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.035);
+  padding: 8px 13px;
+  border-radius: 50px;
+  color: #c3d7ff;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  font-weight: 700;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
+}
+
+h1 {
+  margin-top: 26px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -3px;
+}
+
+.gradient-text {
+  display: block;
+  background: linear-gradient(100deg, #fff 5%, var(--blue) 52%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero h2 {
+  margin-top: 20px;
+  font-size: clamp(19px, 2.6vw, 25px);
+  color: #c7cde0;
+  font-weight: 500;
+}
+
+.hero p, .muted { color: var(--muted); }
+
+.hero p { max-width: 530px; margin-top: 17px; font-size: 15px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+
+.btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: linear-gradient(110deg, #5b9dff, #5be0d8);
+  color: #07101b;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 28px #438dff35; }
+
+.btn.secondary {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255,255,255,.035);
+}
+
+.socials { display: flex; gap: 22px; margin-top: 27px; font-size: 13px; color: var(--muted); }
+.socials a:hover { color: var(--cyan); }
+
+.profile-area { display: flex; align-items: center; justify-content: center; position: relative; }
+
+.profile-ring {
+  width: min(340px, 100%);
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 50%;
+  background: conic-gradient(from 30deg, var(--cyan), #203c84, var(--blue), var(--cyan));
+  box-shadow: 0 0 65px #3d8bff20;
+  animation: float 5s ease-in-out infinite;
+}
+
+.profile-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 7px solid var(--bg);
+  background: #111a30;
+}
+
+.profile-badge {
+  position: absolute;
+  bottom: 8%;
+  left: -5%;
+  padding: 13px 17px;
+  background: #11182b;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 12px;
+  box-shadow: 0 15px 45px #0006;
+}
+
+.profile-badge strong { display: block; color: var(--cyan); font-size: 14px; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+.section { padding: 95px 0; }
+.section-head { margin-bottom: 38px; }
+.section-head.center { text-align: center; }
+.kicker { color: var(--cyan); font-size: 11px; letter-spacing: 2px; font-weight: 800; }
+.section-title { margin-top: 8px; font-size: clamp(30px,4vw,43px); letter-spacing: -1.5px; }
+.section-title span { color: var(--blue); }
+.section-desc { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+.about-box {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 35px;
+  padding: 35px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: linear-gradient(140deg, #111a31, #0a0e20);
+}
+
+.about-art {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: radial-gradient(circle, #203b67, #0b1022 72%);
+  font-size: 85px;
+  font-weight: 800;
+  color: var(--cyan);
+}
+
+.about-box h3 { font-size: 23px; margin-bottom: 12px; }
+.about-box p { color: var(--muted); font-size: 14px; }
+.about-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+.pill { border: 1px solid var(--border); padding: 6px 10px; border-radius: 8px; color: #c6d6f6; font-size: 11px; }
+
+.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+
+.card {
+  background: linear-gradient(145deg, rgba(17,26,49,.95), rgba(9,13,29,.95));
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  transition: .25s;
+}
+
+.card:hover { transform: translateY(-5px); border-color: #61a8ff70; }
+
+.skill-card { padding: 23px; }
+.skill-icon {
+  width: 48px; height: 48px; display: grid; place-items: center;
+  border-radius: 13px; background: #5b9dff12; border: 1px solid #5b9dff35;
+  color: var(--cyan); font-weight: 800; font-size: 19px; margin-bottom: 18px;
+}
+.skill-card h3 { font-size: 16px; }
+.skill-card p { color: var(--muted); font-size: 12px; margin-top: 7px; }
+.status { display: inline-block; margin-top: 17px; font-size: 10px; color: var(--cyan); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.project-card { padding: 25px; }
+.project-index { color: var(--cyan); font-size: 11px; letter-spacing: 1.5px; font-weight: 800; }
+.project-card h3 { font-size: 20px; margin-top: 17px; }
+.project-card p { color: var(--muted); font-size: 13px; margin-top: 10px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
+.project-tags span { font-size: 10px; padding: 5px 8px; border-radius: 6px; background: #ffffff08; border: 1px solid var(--border); }
+.project-link { display: inline-block; color: var(--cyan); font-size: 12px; font-weight: 700; margin-top: 23px; }
+
+.contact-box {
+  text-align: center;
+  padding: 65px 25px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: radial-gradient(ellipse at top, #20447a55, transparent 70%), #0b1021;
+}
+.contact-box h2 { font-size: clamp(30px,4vw,46px); margin-top: 15px; letter-spacing: -1px; }
+.contact-box p { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.contact-box .actions { justify-content: center; }
+
+footer { border-top: 1px solid var(--border); }
+.footer-inner { min-height: 90px; display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
+footer p { font-size: 11px; color: var(--muted); }
+
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 45px; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .actions, .socials { justify-content: center; }
+  .profile-area { grid-row: 1; }
+  .profile-ring { width: 260px; }
+  .profile-badge { left: 8%; }
+  .skills-grid { grid-template-columns: repeat(2,1fr); }
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .nav { padding: 14px 0; flex-direction: column; }
+  .nav-links { justify-content: center; gap: 9px 16px; }
+  .nav-links a { font-size: 11px; }
+  .hero { padding-top: 45px; padding-bottom: 60px; }
+  h1 { letter-spacing: -2px; }
+  .profile-ring { width: 220px; }
+  .profile-badge { left: 0; bottom: 4%; }
+  .section { padding: 68px 0; }
+  .about-box { grid-template-columns: 1fr; padding: 20px; }
+  .about-art { min-height: 150px; font-size: 65px; }
+  .skills-grid { gap: 10px; }
+  .skill-card { padding: 16px; }
+  .contact-box { padding: 45px 18px; }
+  .footer-inner { justify-content: center; text-align: center; padding: 22px 0; flex-direction: column; }
+}
+</style>
 </head>
 
 <body>
-
-  <header class="header">
-    <nav class="container nav">
-      <a href="#home" class="logo">Khaled<span>.</span></a>
-
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero container" id="home">
-      <div class="hero-content">
-        <span class="tag">INFORMATION SYSTEMS STUDENT</span>
-
-        <h1>Hi, I'm <span>Khaled ElGendy</span></h1>
-
-        <h2>Future Frontend Developer</h2>
-
-        <p>
-          I'm learning Frontend Development and building modern,
-          responsive websites. Welcome to my personal portfolio.
-        </p>
-
-        <div class="actions">
-          <a class="btn" href="#projects">Explore My Projects</a>
-          <a class="btn outline"
-             href="https://wa.me/201021854798"
-             target="_blank" rel="noopener noreferrer">
-            Contact Me
-          </a>
-        </div>
-
-        <div class="social-links">
-          <a href="https://github.com/KhaledElGendy27"
-             target="_blank" rel="noopener noreferrer">
-            GitHub ↗
-          </a>
-          <a href="https://wa.me/201021854798"
-             target="_blank" rel="noopener noreferrer">
-            WhatsApp ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-image">
-        <div class="image-glow"></div>
-        <img
-          src="https://github.com/KhaledElGendy27.png"
-          alt="Khaled ElGendy profile photo"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        >
-        <div class="image-fallback">K</div>
-        <div class="image-caption">
-          <span class="status-dot"></span>
-          Learning and Building
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About <span>Me</span></h2>
-        <p class="section-intro">
-          A little introduction about me and my goals.
-        </p>
-
-        <div class="about-card">
-          <div class="about-mark">K<span>.</span></div>
-          <div>
-            <h3>Student. Learner. Future Developer.</h3>
-            <p>
-              My name is Khaled ElGendy. I'm an Information Systems
-              student interested in web development and technology.
-              I'm currently learning HTML, CSS, JavaScript, and
-              responsive web design. My goal is to build useful,
-              attractive websites and keep improving through practice
-              and real projects.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="skills">
-      <div class="container">
-        <h2 class="section-title">My <span>Skills</span></h2>
-        <p class="section-intro">
-          Technologies I'm learning and practicing.
-        </p>
-
-        <div class="skills-grid">
-          <article class="card skill-card">
-            <div class="skill-icon">&lt;/&gt;</div>
-            <h3>HTML5</h3>
-            <p>Building the structure of web pages.</p>
-            <span class="skill-status">Learning</span>
-          </article>
-
-          <article class="card skill-card">
-            <div class="skill-icon">#</div>
-            <h3>CSS3</h3>
-            <p>Styling layouts, colors, and animations.</p>
-            <span class="skill-status">Learning</span>
-          </article>
-
-          <article class="card skill-card">
-            <div class="skill-icon">JS</div>
-            <h3>JavaScript</h3>
-            <p>Learning interactive website features.</p>
-            <span class="skill-status">In Progress</span>
-          </article>
-
-          <article class="card skill-card">
-            <div class="skill-icon">↔</div>
-            <h3>Responsive Design</h3>
-            <p>Making websites work on different screens.</p>
-            <span class="skill-status">Learning</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">My <span>Projects</span></h2>
-        <p class="section-intro">
-          Projects I'm building as I develop my skills.
-        </p>
-
-        <div class="projects-grid">
-          <article class="card project-card">
-            <span class="project-number">PROJECT 01</span>
-            <h3>Personal Portfolio</h3>
-            <p>
-              A personal website to introduce myself, showcase my
-              learning journey, and share my contact details.
-            </p>
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-            </div>
-            <a href="https://github.com/KhaledElGendy27/-my-portfolio"
-               target="_blank" rel="noopener noreferrer"
-               class="project-link">
-              View on GitHub ↗
-            </a>
-          </article>
-
-          <article class="card project-card">
-            <span class="project-number">PROJECT 02</span>
-            <h3>Smart Hospital System</h3>
-            <p>
-              An academic project concept for organizing patient
-              records, appointments, clinics, laboratory services,
-              and hospital billing.
-            </p>
-            <div class="project-tags">
-              <span>Information Systems</span>
-              <span>Planning</span>
-            </div>
-            <span class="project-link">Academic Project Concept</span>
-          </article>
-
-          <article class="card project-card">
-            <span class="project-number">PROJECT 03</span>
-            <h3>Coming Soon</h3>
-            <p>
-              I'm practicing and planning more web projects.
-              This section will grow as I complete them.
-            </p>
-            <div class="project-tags">
-              <span>Practice</span>
-              <span>Growth</span>
-            </div>
-            <span class="project-link">More projects coming soon</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div class="container contact-box">
-        <span class="tag">LET'S CONNECT</span>
-        <h2>Have a project in mind?</h2>
-        <p>
-          Feel free to contact me on WhatsApp or explore my GitHub profile.
-        </p>
-
-        <div class="actions center-actions">
-          <a class="btn"
-             href="https://wa.me/201021854798"
-             target="_blank" rel="noopener noreferrer">
-            Message Me on WhatsApp
-          </a>
-
-          <a class="btn outline"
-             href="https://github.com/KhaledElGendy27"
-             target="_blank" rel="noopener noreferrer">
-            Visit My GitHub
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-content">
-      <a href="#home" class="logo">Khaled<span>.</span></a>
-      <p>Designed and built by Khaled ElGendy</p>
-      <p class="copyright">
-        © <span id="year">2026</span> Khaled ElGendy. All rights reserved.
-      </p>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">Khaled<span>.</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
-  </footer>
+  </nav>
+</header>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+<main>
+<section class="hero container" id="home">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> INFORMATION SYSTEMS STUDENT</div>
+    <h1>Building my path <span class="gradient-text">into the web.</span></h1>
+    <h2>Hi, I'm Khaled ElGendy.</h2>
+    <p>I'm learning Frontend Development and creating modern, responsive web experiences. This is my journey, my work, and what I'm building next.</p>
+    <div class="actions">
+      <a class="btn" href="#projects">Explore My Work ↗</a>
+      <a class="btn secondary" href="https://wa.me/201021854798" target="_blank" rel="noopener noreferrer">Let's Talk</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/KhaledElGendy27" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="https://wa.me/201021854798" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+    </div>
+  </div>
 
+  <div class="profile-area">
+    <div class="profile-ring">
+      <img src="https://github.com/KhaledElGendy27.png" alt="Khaled ElGendy"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="profile-badge"><strong>Currently learning</strong>Frontend Development</div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">A LITTLE ABOUT ME</div>
+      <h2 class="section-title">The person behind <span>the code.</span></h2>
+    </div>
+    <div class="about-box">
+      <div class="about-art">K.</div>
+      <div>
+        <h3>Student. Learner. Future Developer.</h3>
+        <p>I'm Khaled ElGendy, an Information Systems student with an interest in web development and technology. I'm working on my frontend skills step by step, learning how to turn ideas into clean and responsive websites. My goal is to keep practicing, build meaningful projects, and grow as a developer.</p>
+        <div class="about-pills">
+          <span class="pill">Information Systems</span>
+          <span class="pill">Frontend Development</span>
+          <span class="pill">Continuous Learning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head center">
+      <div class="kicker">WHAT I'M LEARNING</div>
+      <h2 class="section-title">My <span>Tech Stack.</span></h2>
+      <p class="section-desc">The tools I'm practicing as I build my foundation.</p>
+    </div>
+    <div class="skills-grid">
+      <article class="card skill-card"><div class="skill-icon">H5</div><h3>HTML5</h3><p>Page structure and accessible content.</p><span class="status">● Learning</span></article>
+      <article class="card skill-card"><div class="skill-icon">C3</div><h3>CSS3</h3><p>Layouts, styling, and visual design.</p><span class="status">● Learning</span></article>
+      <article class="card skill-card"><div class="skill-icon">JS</div><h3>JavaScript</h3><p>Building interactive web experiences.</p><span class="status">● In progress</span></article>
+      <article class="card skill-card"><div class="skill-icon">↔</div><h3>Responsive UI</h3><p>Layouts for phones and desktop screens.</p><span class="status">● Learning</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">SELECTED WORK</div>
+      <h2 class="section-title">Things I'm <span>building.</span></h2>
+      <p class="section-desc">A growing collection of practice and academic work.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="card project-card">
+        <div class="project-index">01 / WEB DEVELOPMENT</div>
+        <h3>Personal Portfolio</h3>
+        <p>A personal website to introduce myself, share my learning journey, and make it easy to get in touch.</p>
+        <div class="project-tags"><span>HTML</span><span>CSS</span><span>Responsive Design</span></div>
+        <a class="project-link" href="https://github.com/KhaledElGendy27/-my-portfolio" target="_blank" rel="noopener noreferrer">Explore Repository ↗</a>
+      </article>
+      <article class="card project-card">
+        <div class="project-index">02 / ACADEMIC CONCEPT</div>
+        <h3>Smart Hospital System</h3>
+        <p>An academic concept focused on organizing patient records, appointments, laboratory services, and billing.</p>
+        <div class="project-tags"><span>Information Systems</span><span>Planning</span></div>
+        <span class="project-link">Academic Project</span>
+      </article>
+      <article class="card project-card">
+        <div class="project-index">03 / COMING NEXT</div>
+        <h3>More to come.</h3>
+        <p>I'm continuing to practice and develop new projects as my skills improve.</p>
+        <div class="project-tags"><span>Practice</span><span>Growth</span></div>
+        <span class="project-link">Currently in progress</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div class="kicker">HAVE A QUESTION?</div>
+      <h2>Let's build something <span class="gradient-text">great.</span></h2>
+      <p>Want to connect, discuss a project, or follow my progress? Feel free to reach out.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/201021854798" target="_blank" rel="noopener noreferrer">Message on WhatsApp ↗</a>
+        <a class="btn secondary" href="https://github.com/KhaledElGendy27" target="_blank" rel="noopener noreferrer">My GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="logo" href="#home">Khaled<span>.</span></a>
+    <p>Designed & built by Khaled ElGendy</p>
+    <p>© <span id="year">2026</span> All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
