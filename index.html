@@ -2,550 +2,852 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
-<meta name="description" content="الموقع الشخصي لخالد الجندي — طالب نظم ومعلومات ومهتم بتطوير واجهات الويب Frontend.">
-<title>خالد الجندي | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="الموقع الشخصي لخالد الجندي — مبرمج Frontend">
+  <title>Khaled ElGendy | My Portfolio</title>
 
-<style>
-:root {
-  --bg:#07111f;
-  --panel:#0d1b2e;
-  --text:#f3f7ff;
-  --muted:#a8b6ca;
-  --accent:#39d5ff;
-  --accent2:#8b7cff;
-  --border:rgba(255,255,255,.1);
-}
-body.light {
-  --bg:#f2f6fc;
-  --panel:#fff;
-  --text:#13243b;
-  --muted:#586a80;
-  --accent:#007dbb;
-  --accent2:#6554d9;
-  --border:rgba(10,30,60,.13);
-}
-* { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-body {
-  font-family:Tahoma,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.8;
-  transition:background .3s,color .3s;
-}
-a { color:inherit; text-decoration:none; }
-button { font:inherit; cursor:pointer; }
-.container { width:min(1100px,92%); margin:auto; }
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1b2e;
+      --text: #f3f7ff;
+      --muted: #a8b6ca;
+      --accent: #39d5ff;
+      --accent2: #8b7cff;
+      --border: rgba(255,255,255,.1);
+      --shadow: 0 15px 45px rgba(0,0,0,.2);
+    }
 
-header {
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-}
-.nav {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  padding:14px 0;
-}
-.logo { font-weight:900; font-size:19px; }
-.logo span { color:var(--accent); }
-.navlinks { display:flex; flex-wrap:wrap; gap:16px; }
-.navlinks a { color:var(--muted); font-size:13px; }
-.navlinks a:hover { color:var(--accent); }
-.theme {
-  border:1px solid var(--border);
-  background:var(--panel);
-  color:var(--text);
-  border-radius:12px;
-  padding:8px 12px;
-}
-.hero {
-  min-height:82vh;
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  align-items:center;
-  gap:45px;
-  padding:65px 0;
-}
-.tag {
-  display:inline-block;
-  color:var(--accent);
-  border:1px solid var(--border);
-  border-radius:50px;
-  padding:5px 13px;
-  font-size:13px;
-  margin-bottom:18px;
-}
-h1 { font-size:clamp(36px,6vw,65px); line-height:1.25; }
-h1 span,.gradient {
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.hero p { color:var(--muted); margin:20px 0; max-width:650px; }
-.actions {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:25px;
-}
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 19px;
-  border-radius:12px;
-  font-weight:bold;
-  border:1px solid var(--border);
-  transition:.25s;
-}
-.btn.primary {
-  background:var(--accent);
-  color:#06111e;
-  border-color:transparent;
-}
-.btn:hover { transform:translateY(-3px); border-color:var(--accent); }
+    body.light {
+      --bg: #f2f6fc;
+      --panel: #ffffff;
+      --text: #13243b;
+      --muted: #61718a;
+      --border: rgba(10,30,60,.12);
+      --shadow: 0 15px 45px rgba(30,60,100,.1);
+    }
 
-.profile {
-  width:min(300px,75vw);
-  aspect-ratio:1;
-  margin:auto;
-  border-radius:30%;
-  padding:5px;
-  background:linear-gradient(140deg,var(--accent),var(--accent2));
-  box-shadow:0 0 65px rgba(57,213,255,.15);
-  animation:float 4s ease-in-out infinite;
-}
-.profile img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:29%;
-  background:var(--panel);
-}
-@keyframes float {
-  0%,100% { transform:translateY(0); }
-  50% { transform:translateY(-12px); }
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-section { padding:65px 0; }
-.section-title { text-align:center; margin-bottom:35px; }
-.section-title h2 { font-size:clamp(26px,4vw,36px); }
-.section-title p { color:var(--muted); margin-top:8px; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-}
-.card {
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:22px;
-  border-radius:18px;
-  transition:transform .25s,border-color .25s;
-}
-.card:hover { transform:translateY(-6px); border-color:var(--accent); }
-.card h3 { margin:10px 0; }
-.card p { color:var(--muted); font-size:14px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+      transition: background .3s, color .3s;
+    }
 
-.skills { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.skill {
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:17px;
-  border-radius:14px;
-}
-.skilltop { display:flex; justify-content:space-between; gap:10px; }
-.skilltop small { color:var(--muted); }
-.track {
-  height:7px;
-  margin-top:12px;
-  background:var(--border);
-  border-radius:20px;
-  overflow:hidden;
-}
-.fill {
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  border-radius:20px;
-  transition:width 1.2s ease;
-}
-.project-img {
-  width:100%;
-  height:155px;
-  object-fit:cover;
-  border-radius:12px;
-  margin-bottom:12px;
-  background:var(--bg);
-}
-.pill {
-  display:inline-block;
-  padding:4px 9px;
-  margin:10px 4px 0 0;
-  font-size:11px;
-  border-radius:30px;
-  color:var(--accent);
-  border:1px solid var(--border);
-}
-.note {
-  border-right:3px solid var(--accent);
-  padding:12px 16px;
-  color:var(--muted);
-  margin-top:20px;
-  font-size:13px;
-}
-.contactbox {
-  text-align:center;
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:35px 20px;
-  border-radius:22px;
-}
-.contactbox .actions { justify-content:center; }
-.social-title { margin-top:25px; color:var(--muted); font-size:14px; }
-footer {
-  text-align:center;
-  color:var(--muted);
-  padding:25px;
-  border-top:1px solid var(--border);
-}
-.reveal {
-  opacity:0;
-  transform:translateY(22px);
-  transition:opacity .7s,transform .7s;
-}
-.reveal.show { opacity:1; transform:translateY(0); }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-@media(max-width:760px) {
-  .hero {
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:30px;
-    padding-top:45px;
-  }
-  .hero p { margin:18px auto; }
-  .actions { justify-content:center; }
-  .profile { grid-row:1; width:210px; }
-  .grid { grid-template-columns:1fr; }
-  .skills { grid-template-columns:1fr; }
-  .nav { flex-wrap:wrap; }
-  .navlinks {
-    order:3;
-    width:100%;
-    justify-content:center;
-    gap:12px;
-  }
-  .navlinks a { font-size:12px; }
-  section { padding:48px 0; }
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation:none!important;
-    scroll-behavior:auto!important;
-    transition:none!important;
-  }
-}
-</style>
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--accent);
+      direction: ltr;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .theme-btn {
+      background: var(--panel);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 7px 12px;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 45px;
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--accent);
+      background: rgba(57,213,255,.09);
+      border: 1px solid rgba(57,213,255,.25);
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(35px, 5vw, 60px);
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p, .section-desc {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 21px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: bold;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent), #6b8cff);
+      color: #04101d;
+      border: 0;
+    }
+
+    .btn-secondary {
+      background: var(--panel);
+      color: var(--text);
+    }
+
+    .profile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .profile::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      filter: blur(45px);
+      opacity: .22;
+    }
+
+    .profile img {
+      position: relative;
+      width: min(300px, 75vw);
+      height: min(300px, 75vw);
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 35px rgba(57,213,255,.22);
+      background: var(--panel);
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(26px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 span {
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform .25s, border-color .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .skill-info span:last-child {
+      color: var(--accent);
+      direction: ltr;
+    }
+
+    .bar {
+      height: 8px;
+      background: rgba(130,150,180,.17);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transition: width 1.2s ease;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .small-link {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .learning-card {
+      border-right: 3px solid var(--accent);
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(57,213,255,.1);
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 17px;
+      min-width: 0;
+      transition: border-color .2s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent);
+    }
+
+    .contact-icon {
+      font-size: 24px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+    }
+
+    .contact-item strong {
+      display: block;
+      overflow-wrap: anywhere;
+      direction: ltr;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 35px;
+        padding-top: 45px;
+      }
+
+      .hero p {
+        margin-inline: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .profile {
+        grid-row: 1;
+      }
+
+      .profile img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .grid, .skills-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <div class="container nav">
-    <a class="logo" href="#home">Khaled<span>.</span></a>
-    <nav class="navlinks">
-      <a href="#about">عني</a>
-      <a href="#skills">مهاراتي</a>
-      <a href="#projects">مشاريعي</a>
-      <a href="#experience">اهتماماتي</a>
-      <a href="#certificates">التعلم</a>
-      <a href="#contact">تواصل</a>
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Khaled ElGendy</a>
+
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#skills">مهاراتي</a>
+        <a href="#projects">مشاريعي</a>
+        <a href="#learning">التعلم</a>
+        <a href="#contact">تواصل معي</a>
+      </div>
+
+      <button class="theme-btn" id="themeBtn" aria-label="تغيير المظهر">
+        ☀️ / 🌙
+      </button>
     </nav>
-    <button class="theme" id="themeBtn" aria-label="تغيير ألوان الموقع">☀️ / 🌙</button>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="container hero" id="home">
-  <div class="reveal">
-    <span class="tag">HTML & CSS مكتملان | أتعلم JavaScript 🚀</span>
-    <h1>أنا <span>خالد الجندي</span><br>أبني أفكارًا رقمية.</h1>
-    <p>
-      طالب نظم ومعلومات ومهتم بتطوير واجهات الويب Frontend.
-      أنهيت تعلم HTML وCSS، وأواصل تعلم JavaScript وتطبيق
-      مهاراتي في بناء مواقع ويب عملية ومتجاوبة.
-    </p>
-    <div class="actions">
-      <a class="btn primary" href="#projects">اكتشف مشاريعي ↙</a>
-      <a class="btn" href="CV.pdf" download>📄 تحميل السيرة الذاتية</a>
-      <a class="btn" href="https://wa.me/201021854798" target="_blank" rel="noopener">💬 تواصل معي</a>
-    </div>
-  </div>
+  <main>
+    <section class="container hero" id="home">
+      <div class="hero-content reveal">
+        <span class="tag">Information Systems Student · Frontend Developer</span>
 
-  <div class="profile reveal">
-    <img src="https://github.com/KhaledElGendy27.png"
-         alt="صورة حساب خالد الجندي على GitHub"
-         onerror="this.style.display='none'">
-  </div>
-</section>
+        <h1>
+          أهلاً، أنا<br>
+          <span class="gradient">خالد الجندي</span>
+        </h1>
 
-<section id="about">
-  <div class="container reveal">
-    <div class="section-title">
-      <h2>مين هو <span class="gradient">خالد؟</span></h2>
-      <p>شغف بالتقنية، عقلية تطوير، وانضباط في الحياة.</p>
-    </div>
-    <div class="card">
-      <p>
-        أنا خالد محمد معوض خليل الجندي، طالب نظم ومعلومات ومهتم
-        بالبرمجة وتطوير الويب. أنهيت تعلم HTML وCSS وأعمل حاليًا
-        على تعلم JavaScript وتطوير مهاراتي في بناء مواقع تفاعلية.
-        أسعى إلى تطبيق ما أتعلمه في مشاريع عملية والتطور باستمرار.
-        لدي أيضًا اهتمام بالأسواق المالية واللياقة البدنية.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container reveal">
-    <div class="section-title">
-      <h2>مهاراتي <span class="gradient">التقنية</span></h2>
-      <p>رحلتي في تعلم وتطوير مهارات Frontend.</p>
-    </div>
-
-    <div class="skills">
-      <div class="skill">
-        <div class="skilltop"><strong>HTML5</strong><small>مكتمل ✓ 100%</small></div>
-        <div class="track"><div class="fill" data-level="100"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skilltop"><strong>CSS3</strong><small>مكتمل ✓ 100%</small></div>
-        <div class="track"><div class="fill" data-level="100"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skilltop"><strong>JavaScript</strong><small>قيد التعلم 50%</small></div>
-        <div class="track"><div class="fill" data-level="50"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skilltop"><strong>Git & GitHub</strong><small>تطبيق عملي</small></div>
-        <div class="track"><div class="fill" data-level="40"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skilltop"><strong>Responsive Design</strong><small>قيد التطوير</small></div>
-        <div class="track"><div class="fill" data-level="60"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skilltop"><strong>Frontend Projects</strong><small>تطبيق وتطوير</small></div>
-        <div class="track"><div class="fill" data-level="50"></div></div>
-      </div>
-    </div>
-
-    <p class="note">
-      أنهيت دراسة HTML وCSS، وأواصل تعلم JavaScript.
-      نسب التقدم تقديرية وتعبر عن رحلتي التعليمية.
-    </p>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container reveal">
-    <div class="section-title">
-      <h2>مشاريعي <span class="gradient">وأفكاري</span></h2>
-      <p>أعمالي الحالية والأفكار التي أعمل على تطويرها.</p>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=700&q=80"
-          alt="تصميم واجهة موقع ويب">
-        <h3>الموقع الشخصي Portfolio</h3>
-        <p>موقع شخصي لعرض المهارات والمشاريع ووسائل التواصل بتصميم متجاوب.</p>
-        <span class="pill">HTML</span><span class="pill">CSS</span>
-        <span class="pill">JavaScript</span>
-        <p style="margin-top:14px">
-          <a href="https://github.com/KhaledElGendy27/-my-portfolio" target="_blank" rel="noopener">عرض الكود على GitHub ↗</a>
+        <p>
+          طالب نظم ومعلومات ومهتم بتطوير واجهات الويب.
+          أتعلم Frontend خطوة بخطوة وأسعى لبناء مواقع عصرية،
+          سريعة، ومتجاوبة مع جميع الشاشات.
         </p>
-        <p style="margin-top:10px">
-          <a href="https://khaledelgendy27.github.io/-my-portfolio/" target="_blank" rel="noopener">زيارة الموقع ↗</a>
-        </p>
-      </article>
 
-      <article class="card">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80"
-          alt="تقنية الرعاية الصحية">
-        <h3>نظام إدارة المستشفى الذكي</h3>
-        <p>فكرة مشروع أكاديمي لتنظيم بيانات المرضى والمواعيد والمعامل والحسابات.</p>
-        <span class="pill">تحليل نظم</span><span class="pill">مشروع أكاديمي</span>
-      </article>
-
-      <article class="card">
-        <img class="project-img"
-          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=700&q=80"
-          alt="رسوم بيانية للأسواق المالية">
-        <h3>لوحة متابعة الأسواق</h3>
-        <p>فكرة مستقبلية لعرض بيانات السوق والرسوم البيانية ومعلومات الأسهم.</p>
-        <span class="pill">Project Idea</span><span class="pill">قيد التخطيط</span>
-      </article>
-    </div>
-
-    <p class="note">صور المشاريع توضيحية. الأفكار غير المنفذة ليست مشاريع مكتملة.</p>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container reveal">
-    <div class="section-title">
-      <h2>اهتماماتي <span class="gradient">وخلفيتي</span></h2>
-      <p>مجالات أستمتع بالتعلم والتطور فيها.</p>
-    </div>
-
-    <div class="grid">
-      <article class="card">
-        <div class="icon">💻</div>
-        <h3>البرمجة وتطوير الويب</h3>
-        <p>أتعلم تطوير واجهات الويب وأطبق ما أتعلمه في مشاريع عملية.</p>
-      </article>
-
-      <article class="card">
-        <div class="icon">📈</div>
-        <h3>الأسهم والأسواق المالية</h3>
-        <p>أهتم بمتابعة الأسواق وتعلم تحليل البيانات وفهم حركة السوق.</p>
-      </article>
-
-      <article class="card">
-        <div class="icon">🏋️</div>
-        <h3>الجيم واللياقة البدنية</h3>
-        <p>أهتم بالتمرين وبناء اللياقة والالتزام بتحقيق الأهداف.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="certificates">
-  <div class="container reveal">
-    <div class="section-title">
-      <h2>رحلتي في <span class="gradient">التعلم</span></h2>
-      <p>خطواتي الحالية نحو تطوير مهارات Frontend.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎓</div>
-      <h3>Frontend Development</h3>
-      <p>
-        ✓ إكمال HTML
-        <br>
-        ✓ إكمال CSS
-        <br>
-        ⏳ مواصلة تعلم JavaScript
-        <br>
-        🚀 الاستعداد لبناء مشاريع أكثر تقدمًا.
-      </p>
-      <span class="pill">HTML5</span>
-      <span class="pill">CSS3</span>
-      <span class="pill">JavaScript</span>
-      <p class="note">ستُضاف أسماء الكورسات والشهادات بعد إتمامها والحصول عليها.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container reveal">
-    <div class="contactbox">
-      <h2>تواصل <span class="gradient">معي</span></h2>
-      <p style="color:var(--muted);margin:12px 0 22px">
-        يسعدني التواصل لمناقشة فرص التدريب والتعاون والمشاريع التقنية.
-      </p>
-
-      <div class="actions">
-        <a class="btn primary"
-           href="https://wa.me/201021854798"
-           target="_blank" rel="noopener">
-          💬 واتساب
-        </a>
-
-        <a class="btn"
-           href="https://www.instagram.com/khaled__el_jundi?xtok=MXgyYW42cjF3cmEyZw=="
-           target="_blank" rel="noopener">
-          📸 Instagram
-        </a>
-
-        <a class="btn"
-           href="https://www.facebook.com/share/1C3Xdn8KZ1/"
-           target="_blank" rel="noopener">
-          📘 Facebook
-        </a>
-
-        <a class="btn"
-           href="https://www.tiktok.com/@kaldhmohamed?_r=1&_t=ZS-9AZPjHEVFwn"
-           target="_blank" rel="noopener">
-          🎵 TikTok
-        </a>
-
-        <a class="btn"
-           href="https://github.com/KhaledElGendy27"
-           target="_blank" rel="noopener">
-          🐙 GitHub
-        </a>
-
-        <a class="btn"
-           href="mailto:YOUR_EMAIL@example.com">
-          ✉️ البريد الإلكتروني
-        </a>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">شاهد مشاريعي</a>
+          <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+        </div>
       </div>
 
-      <p class="social-title">تقدر تتابعني على منصات التواصل الاجتماعي</p>
-      <p class="note">استبدل YOUR_EMAIL@example.com ببريدك الحقيقي لإتاحة التواصل عبر البريد الإلكتروني.</p>
+      <div class="profile reveal">
+        <img
+          src="https://raw.githubusercontent.com/KhaledElGendy27/-my-portfolio/main/Picsart_26-08-15_01-40-24-959.jpg"
+          alt="صورة خالد الجندي الشخصية"
+          onerror="this.onerror=null;this.src='https://github.com/KhaledElGendy27.png';"
+        >
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>نبذة <span>عني</span></h2>
+          <p class="section-desc">
+            أعمل على تطوير مهاراتي التقنية وبناء مشروعات عملية تساعدني
+            على الاستعداد لسوق العمل.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">🎓</div>
+            <h3>دراستي</h3>
+            <p>
+              طالب في السنة الرابعة بتخصص نظم ومعلومات،
+              وأهتم بربط الدراسة النظرية بالتطبيق العملي.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">💻</div>
+            <h3>مجالي</h3>
+            <p>
+              مهتم بتطوير واجهات المواقع باستخدام HTML وCSS
+              وJavaScript، وتحسين تجربة المستخدم.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🚀</div>
+            <h3>هدفي</h3>
+            <p>
+              تطوير مشروعات قوية، وإنشاء Portfolio احترافي،
+              والاستعداد للحصول على أول فرصة عمل في مجال Frontend.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>المهارات <span>التقنية</span></h2>
+          <p class="section-desc">
+            أعمل على تطوير مستواي باستمرار من خلال التعلم والتطبيق.
+            النسب التالية تقدير ذاتي لمستوى التقدم.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill reveal">
+            <div class="skill-info">
+              <span>HTML5</span><span>100%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" data-level="100"></div>
+            </div>
+          </div>
+
+          <div class="skill reveal">
+            <div class="skill-info">
+              <span>CSS3</span><span>100%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" data-level="100"></div>
+            </div>
+          </div>
+
+          <div class="skill reveal">
+            <div class="skill-info">
+              <span>JavaScript</span><span>50%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" data-level="50"></div>
+            </div>
+          </div>
+
+          <div class="skill reveal">
+            <div class="skill-info">
+              <span>Git & GitHub</span><span>40%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" data-level="40"></div>
+            </div>
+          </div>
+
+          <div class="skill reveal">
+            <div class="skill-info">
+              <span>Responsive Design</span><span>60%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" data-level="60"></div>
+            </div>
+          </div>
+
+          <div class="skill reveal">
+            <div class="skill-info">
+              <span>Frontend Projects</span><span>50%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" data-level="50"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>مشاريعي <span>الأولى</span></h2>
+          <p class="section-desc">
+            أضيف هنا مشروعاتي العملية مع تقدمي في رحلة تعلم البرمجة.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">🌐</div>
+            <h3>Personal Portfolio</h3>
+            <p>
+              موقعي الشخصي لعرض نبذة عني ومهاراتي وروابط التواصل،
+              مع تصميم متجاوب ودعم الوضع الفاتح والداكن.
+            </p>
+            <div class="project-links">
+              <a class="small-link"
+                 href="https://github.com/KhaledElGendy27/-my-portfolio"
+                 target="_blank" rel="noopener noreferrer">
+                عرض الكود على GitHub ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🏥</div>
+            <h3>Smart Hospital System</h3>
+            <p>
+              فكرة نظام لإدارة المستشفى يربط بيانات المرضى
+              والمواعيد والعيادات والمعامل والحسابات في مكان واحد.
+            </p>
+            <span class="status">مشروع قيد التطوير</span>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">⚡</div>
+            <h3>مشروع Frontend القادم</h3>
+            <p>
+              أعمل على تعلم JavaScript وتطبيق المفاهيم الجديدة
+              في مشروعات تفاعلية لزيادة خبرتي العملية.
+            </p>
+            <span class="status">قيد التعلم</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>اهتماماتي <span>ومميزاتي</span></h2>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">🎨</div>
+            <h3>تصميم الواجهات</h3>
+            <p>الاهتمام بتنسيق الألوان والتفاصيل وتقديم تجربة استخدام واضحة.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🧠</div>
+            <h3>التعلم المستمر</h3>
+            <p>تطوير المهارات من خلال الدروس والتجربة وحل المشكلات.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🤝</div>
+            <h3>العمل الجماعي</h3>
+            <p>التعاون مع الفريق وتقسيم المهام والمشاركة في بناء المشروعات.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>التعلم <span>والتطوير</span></h2>
+          <p class="section-desc">
+            أركز على بناء أساس قوي في تطوير الواجهات ثم الانتقال
+            إلى تطبيقات أكثر تقدمًا.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card learning-card reveal">
+            <h3>HTML</h3>
+            <p>بناء هيكل صفحات الويب وتنظيم المحتوى والعناصر.</p>
+            <span class="status">تمت دراسة الأساسيات</span>
+          </article>
+
+          <article class="card learning-card reveal">
+            <h3>CSS</h3>
+            <p>تنسيق الصفحات والألوان والتخطيطات والاستجابة للشاشات.</p>
+            <span class="status">تمت دراسة الأساسيات</span>
+          </article>
+
+          <article class="card learning-card reveal">
+            <h3>JavaScript</h3>
+            <p>تعلم أساسيات البرمجة وإضافة التفاعل إلى صفحات الويب.</p>
+            <span class="status">قيد التعلم · 50%</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>تواصل <span>معي</span></h2>
+          <p class="section-desc">
+            يمكنك التواصل معي أو زيارة حساباتي لمتابعة مشاريعي وتقدمي.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-item reveal"
+             href="https://github.com/KhaledElGendy27"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">💻</span>
+            <span>
+              <small>GitHub</small>
+              <strong>KhaledElGendy27</strong>
+            </span>
+          </a>
+
+          <a class="contact-item reveal"
+             href="https://wa.me/201021854798"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">📱</span>
+            <span>
+              <small>WhatsApp</small>
+              <strong>تواصل معي على واتساب</strong>
+            </span>
+          </a>
+
+          <a class="contact-item reveal"
+             href="https://www.tiktok.com/@kaldhmohamed?_r=1&_t=ZS-9AZPjHEVFwn"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">🎵</span>
+            <span>
+              <small>TikTok</small>
+              <strong>حسابي على تيك توك</strong>
+            </span>
+          </a>
+
+          <a class="contact-item reveal"
+             href="https://www.instagram.com/khaled__el_jundi?xtok=MXgyYW42cjF3cmEyZw=="
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">📸</span>
+            <span>
+              <small>Instagram</small>
+              <strong>حسابي على إنستجرام</strong>
+            </span>
+          </a>
+
+          <a class="contact-item reveal"
+             href="https://www.facebook.com/share/1C3Xdn8KZ1/"
+             target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon">👥</span>
+            <span>
+              <small>Facebook</small>
+              <strong>حسابي على فيسبوك</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span> Khaled ElGendy — جميع الحقوق محفوظة.
+      </p>
+      <p>Designed & Built with HTML, CSS and JavaScript.</p>
     </div>
-  </div>
-</section>
-</main>
+  </footer>
 
-<footer>
-  <p>© <span id="year"></span> خالد الجندي — صُنع بشغف للتعلم والتطوير.</p>
-</footer>
+  <script>
+    // السنة الحالية في أسفل الموقع
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
+    // التبديل بين الوضع الفاتح والداكن
+    const themeBtn = document.getElementById("themeBtn");
 
-const themeBtn = document.getElementById("themeBtn");
-themeBtn.addEventListener("click", function () {
-  document.body.classList.toggle("light");
-});
+    themeBtn.addEventListener("click", function () {
+      document.body.classList.toggle("light");
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+      const isLight = document.body.classList.contains("light");
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute("content", isLight ? "#f2f6fc" : "#07111f");
+    });
 
-      entry.target.querySelectorAll(".fill").forEach((bar) => {
-        bar.style.width = bar.dataset.level + "%";
-      });
+    // ظهور العناصر عند الوصول إليها أثناء التمرير
+    const revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
 
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (element) {
+      revealObserver.observe(element);
+    });
 
-document.querySelectorAll(".reveal").forEach((el) => {
-  observer.observe(el);
-});
-</script>
+    // تحريك أشرطة المهارات
+    const skillObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            const level = Number(bar.dataset.level);
+            bar.style.width = Math.max(0, Math.min(100, level)) + "%";
+            skillObserver.unobserve(bar);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".bar-fill").forEach(function (bar) {
+      skillObserver.observe(bar);
+    });
+  </script>
 </body>
 </html>
