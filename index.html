@@ -1,56 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#020817">
-  <meta name="description" content="Khaled ElGendy — Frontend Developer and Information Systems Student">
+  <meta name="description" content="Khaled ElGendy - Information Systems Student and Frontend Developer in progress.">
   <title>Khaled ElGendy | Portfolio</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Arial,sans-serif;background:#020817;color:#edf5ff;line-height:1.7}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,90%);margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(2,8,23,.92);backdrop-filter:blur(12px);border-bottom:1px solid #16304f}
-    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .logo{font-size:21px;font-weight:800;color:#42b8ff}
-    .links{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;color:#c4d6eb}
-    .links a:hover,.contact a:hover{color:#42b8ff}
-    .hero{min-height:75vh;display:flex;align-items:center;padding:80px 0;background:radial-gradient(ellipse at 80% 20%,#103365 0,transparent 40%)}
-    .tag{display:inline-block;border:1px solid #24558a;border-radius:30px;padding:6px 14px;color:#63c7ff;font-size:13px;margin-bottom:22px}
-    h1{font-size:clamp(38px,7vw,70px);line-height:1.15;margin-bottom:20px;letter-spacing:-2px}
-    h1 span,.blue{color:#42b8ff}
-    .hero p,.intro{max-width:650px;color:#a9bfd8;font-size:17px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .btn{display:inline-block;padding:12px 20px;border-radius:9px;background:#1688ed;color:white;font-weight:700;border:1px solid #1688ed;transition:.25s}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px #1688ed35}
-    .btn.outline{background:transparent;border-color:#2b496b}
-    section{padding:80px 0;scroll-margin-top:75px}
-    .section-title{text-align:center;font-size:32px;margin-bottom:12px}
-    .section-title span{color:#42b8ff}
-    .intro{text-align:center;margin:0 auto 38px;font-size:15px}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .card{background:linear-gradient(145deg,#0b1930,#071225);border:1px solid #183452;border-radius:16px;padding:24px;transition:.3s}
-    .card:hover{transform:translateY(-6px);border-color:#278ee5}
-    .card h3{margin-bottom:10px;color:#e8f5ff}
-    .card p{font-size:14px;color:#a9bfd8}
-    .skills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-    .skill{background:#0b1c33;border:1px solid #20456a;color:#8fd8ff;padding:10px 17px;border-radius:9px}
-    .project-link{display:inline-block;margin-top:18px;color:#53bdff;font-size:14px}
-    .contact{text-align:center}
-    .contact .card{max-width:700px;margin:auto}
-    footer{text-align:center;padding:25px;border-top:1px solid #16304f;color:#7f98b6;font-size:13px}
-    .reveal{animation:rise .8s ease both}
-    @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    @media(max-width:700px){nav{padding:14px 0;align-items:flex-start;flex-direction:column}.links{gap:12px}.hero{min-height:65vh;padding:65px 0}.grid{grid-template-columns:1fr}section{padding:60px 0}.section-title{font-size:28px}}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <nav class="container">
-      <a class="logo" href="#home">Khaled<span class="blue">.</span></a>
-      <div class="links">
+
+  <header class="header">
+    <nav class="container nav">
+      <a href="#home" class="logo">Khaled<span>.</span></a>
+
+      <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -61,86 +27,215 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container reveal">
+    <section class="hero container" id="home">
+      <div class="hero-content">
         <span class="tag">INFORMATION SYSTEMS STUDENT</span>
-        <h1>Hi, I'm Khaled<br><span>ElGendy</span></h1>
-        <p>I'm learning Frontend Development and building modern, responsive websites. Welcome to my personal portfolio.</p>
+
+        <h1>Hi, I'm <span>Khaled ElGendy</span></h1>
+
+        <h2>Future Frontend Developer</h2>
+
+        <p>
+          I'm learning Frontend Development and building modern,
+          responsive websites. Welcome to my personal portfolio.
+        </p>
+
         <div class="actions">
-          <a class="btn" href="#projects">Explore My Work</a>
-          <a class="btn outline" href="#contact">Contact Me</a>
+          <a class="btn" href="#projects">Explore My Projects</a>
+          <a class="btn outline"
+             href="https://wa.me/201021854798"
+             target="_blank" rel="noopener noreferrer">
+            Contact Me
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/KhaledElGendy27"
+             target="_blank" rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+          <a href="https://wa.me/201021854798"
+             target="_blank" rel="noopener noreferrer">
+            WhatsApp ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-glow"></div>
+        <img
+          src="https://github.com/KhaledElGendy27.png"
+          alt="Khaled ElGendy profile photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <div class="image-fallback">K</div>
+        <div class="image-caption">
+          <span class="status-dot"></span>
+          Learning and Building
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section class="section" id="about">
       <div class="container">
         <h2 class="section-title">About <span>Me</span></h2>
-        <p class="intro">I'm Khaled Mohamed, an Information Systems student interested in web development, technology, and creating useful digital experiences. I'm continuously learning and improving through practical projects.</p>
-        <div class="grid">
-          <article class="card"><h3>🎯 My Goal</h3><p>Become a skilled Frontend Developer and build accessible, responsive websites.</p></article>
-          <article class="card"><h3>📚 My Learning</h3><p>Developing my skills in HTML, CSS, JavaScript, and modern web design.</p></article>
-          <article class="card"><h3>🚀 My Approach</h3><p>Learn by building projects, solving problems, and improving step by step.</p></article>
+        <p class="section-intro">
+          A little introduction about me and my goals.
+        </p>
+
+        <div class="about-card">
+          <div class="about-mark">K<span>.</span></div>
+          <div>
+            <h3>Student. Learner. Future Developer.</h3>
+            <p>
+              My name is Khaled ElGendy. I'm an Information Systems
+              student interested in web development and technology.
+              I'm currently learning HTML, CSS, JavaScript, and
+              responsive web design. My goal is to build useful,
+              attractive websites and keep improving through practice
+              and real projects.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="skills">
+    <section class="section section-alt" id="skills">
       <div class="container">
         <h2 class="section-title">My <span>Skills</span></h2>
-        <p class="intro">Technologies I'm learning and practicing.</p>
-        <div class="skills">
-          <span class="skill">HTML5</span>
-          <span class="skill">CSS3</span>
-          <span class="skill">Responsive Design</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">JavaScript — Learning</span>
-          <span class="skill">UI Design — Learning</span>
+        <p class="section-intro">
+          Technologies I'm learning and practicing.
+        </p>
+
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>HTML5</h3>
+            <p>Building the structure of web pages.</p>
+            <span class="skill-status">Learning</span>
+          </article>
+
+          <article class="card skill-card">
+            <div class="skill-icon">#</div>
+            <h3>CSS3</h3>
+            <p>Styling layouts, colors, and animations.</p>
+            <span class="skill-status">Learning</span>
+          </article>
+
+          <article class="card skill-card">
+            <div class="skill-icon">JS</div>
+            <h3>JavaScript</h3>
+            <p>Learning interactive website features.</p>
+            <span class="skill-status">In Progress</span>
+          </article>
+
+          <article class="card skill-card">
+            <div class="skill-icon">↔</div>
+            <h3>Responsive Design</h3>
+            <p>Making websites work on different screens.</p>
+            <span class="skill-status">Learning</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section class="section" id="projects">
       <div class="container">
-        <h2 class="section-title">Featured <span>Projects</span></h2>
-        <p class="intro">A place to showcase my work as I continue learning and building.</p>
-        <div class="grid">
-          <article class="card">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <p class="section-intro">
+          Projects I'm building as I develop my skills.
+        </p>
+
+        <div class="projects-grid">
+          <article class="card project-card">
+            <span class="project-number">PROJECT 01</span>
             <h3>Personal Portfolio</h3>
-            <p>A responsive portfolio website built with HTML and CSS to introduce myself and share my work.</p>
-            <a class="project-link" href="https://github.com/KhaledElGendy27/-my-portfolio">View Repository ↗</a>
+            <p>
+              A personal website to introduce myself, showcase my
+              learning journey, and share my contact details.
+            </p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+            <a href="https://github.com/KhaledElGendy27/-my-portfolio"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+              View on GitHub ↗
+            </a>
           </article>
-          <article class="card">
+
+          <article class="card project-card">
+            <span class="project-number">PROJECT 02</span>
             <h3>Smart Hospital System</h3>
-            <p>A student project concept for managing appointments, patient records, clinics, and billing.</p>
-            <span class="project-link">Project concept</span>
+            <p>
+              An academic project concept for organizing patient
+              records, appointments, clinics, laboratory services,
+              and hospital billing.
+            </p>
+            <div class="project-tags">
+              <span>Information Systems</span>
+              <span>Planning</span>
+            </div>
+            <span class="project-link">Academic Project Concept</span>
           </article>
-          <article class="card">
+
+          <article class="card project-card">
+            <span class="project-number">PROJECT 03</span>
             <h3>Coming Soon</h3>
-            <p>More practical projects will be added here as I continue developing my skills.</p>
-            <span class="project-link">In progress</span>
+            <p>
+              I'm practicing and planning more web projects.
+              This section will grow as I complete them.
+            </p>
+            <div class="project-tags">
+              <span>Practice</span>
+              <span>Growth</span>
+            </div>
+            <span class="project-link">More projects coming soon</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Let's <span>Connect</span></h2>
-        <p class="intro">Interested in working together or discussing a project? Get in touch.</p>
-        <div class="card">
-          <h3>Khaled ElGendy</h3>
-          <p>Frontend Developer — Aspiring</p>
-          <div class="actions" style="justify-content:center">
-            <a class="btn" href="mailto:YOUR_EMAIL@example.com">Email Me</a>
-            <a class="btn outline" href="https://github.com/KhaledElGendy27">GitHub Profile</a>
-          </div>
-          <p style="margin-top:18px;font-size:12px">Replace the email address with your real email before sharing the site.</p>
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box">
+        <span class="tag">LET'S CONNECT</span>
+        <h2>Have a project in mind?</h2>
+        <p>
+          Feel free to contact me on WhatsApp or explore my GitHub profile.
+        </p>
+
+        <div class="actions center-actions">
+          <a class="btn"
+             href="https://wa.me/201021854798"
+             target="_blank" rel="noopener noreferrer">
+            Message Me on WhatsApp
+          </a>
+
+          <a class="btn outline"
+             href="https://github.com/KhaledElGendy27"
+             target="_blank" rel="noopener noreferrer">
+            Visit My GitHub
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>© 2026 Khaled ElGendy · Built with HTML & CSS</footer>
+  <footer class="footer">
+    <div class="container footer-content">
+      <a href="#home" class="logo">Khaled<span>.</span></a>
+      <p>Designed and built by Khaled ElGendy</p>
+      <p class="copyright">
+        © <span id="year">2026</span> Khaled ElGendy. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
 </body>
 </html>
