@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#07111f">
-<meta name="description" content="الموقع الشخصي لخالد الجندي — مبرمج Frontend مهتم بالتقنية والأسواق المالية واللياقة البدنية.">
+<meta name="description" content="الموقع الشخصي لخالد الجندي — طالب نظم ومعلومات ومهتم بتطوير واجهات الويب Frontend.">
 <title>خالد الجندي | Portfolio</title>
 
 <style>
@@ -20,7 +20,7 @@
 }
 body.light {
   --bg:#f2f6fc;
-  --panel:#ffffff;
+  --panel:#fff;
   --text:#13243b;
   --muted:#586a80;
   --accent:#007dbb;
@@ -39,14 +39,20 @@ body {
 a { color:inherit; text-decoration:none; }
 button { font:inherit; cursor:pointer; }
 .container { width:min(1100px,92%); margin:auto; }
+
 header {
-  position:sticky; top:0; z-index:10;
+  position:sticky;
+  top:0;
+  z-index:10;
   background:var(--bg);
   border-bottom:1px solid var(--border);
 }
 .nav {
-  display:flex; align-items:center; justify-content:space-between;
-  gap:15px; padding:14px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:14px 0;
 }
 .logo { font-weight:900; font-size:19px; }
 .logo span { color:var(--accent); }
@@ -54,118 +60,200 @@ header {
 .navlinks a { color:var(--muted); font-size:13px; }
 .navlinks a:hover { color:var(--accent); }
 .theme {
-  border:1px solid var(--border); background:var(--panel);
-  color:var(--text); border-radius:12px; padding:8px 12px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--text);
+  border-radius:12px;
+  padding:8px 12px;
 }
 .hero {
-  min-height:82vh; display:grid;
-  grid-template-columns:1.3fr .7fr; align-items:center;
-  gap:45px; padding-top:65px; padding-bottom:65px;
+  min-height:82vh;
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  align-items:center;
+  gap:45px;
+  padding:65px 0;
 }
 .tag {
-  display:inline-block; color:var(--accent);
-  border:1px solid var(--border); border-radius:50px;
-  padding:5px 13px; font-size:13px; margin-bottom:18px;
+  display:inline-block;
+  color:var(--accent);
+  border:1px solid var(--border);
+  border-radius:50px;
+  padding:5px 13px;
+  font-size:13px;
+  margin-bottom:18px;
 }
 h1 { font-size:clamp(36px,6vw,65px); line-height:1.25; }
-h1 span, .gradient {
+h1 span,.gradient {
   background:linear-gradient(90deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 .hero p { color:var(--muted); margin:20px 0; max-width:650px; }
-.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:25px; }
-.btn {
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:11px 19px; border-radius:12px; font-weight:bold;
-  border:1px solid var(--border); transition:.25s;
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
 }
-.btn.primary { background:var(--accent); color:#06111e; border-color:transparent; }
-.btn:hover { transform:translateY(-3px); }
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 19px;
+  border-radius:12px;
+  font-weight:bold;
+  border:1px solid var(--border);
+  transition:.25s;
+}
+.btn.primary {
+  background:var(--accent);
+  color:#06111e;
+  border-color:transparent;
+}
+.btn:hover { transform:translateY(-3px); border-color:var(--accent); }
+
 .profile {
-  width:min(300px,75vw); aspect-ratio:1; margin:auto;
-  border-radius:30%; padding:5px;
+  width:min(300px,75vw);
+  aspect-ratio:1;
+  margin:auto;
+  border-radius:30%;
+  padding:5px;
   background:linear-gradient(140deg,var(--accent),var(--accent2));
   box-shadow:0 0 65px rgba(57,213,255,.15);
   animation:float 4s ease-in-out infinite;
 }
 .profile img {
-  width:100%; height:100%; object-fit:cover;
-  border-radius:29%; background:var(--panel);
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:29%;
+  background:var(--panel);
 }
 @keyframes float {
   0%,100% { transform:translateY(0); }
   50% { transform:translateY(-12px); }
 }
+
 section { padding:65px 0; }
 .section-title { text-align:center; margin-bottom:35px; }
 .section-title h2 { font-size:clamp(26px,4vw,36px); }
 .section-title p { color:var(--muted); margin-top:8px; }
+
 .grid {
-  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;
 }
 .card {
-  background:var(--panel); border:1px solid var(--border);
-  padding:22px; border-radius:18px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:22px;
+  border-radius:18px;
   transition:transform .25s,border-color .25s;
 }
 .card:hover { transform:translateY(-6px); border-color:var(--accent); }
 .card h3 { margin:10px 0; }
 .card p { color:var(--muted); font-size:14px; }
-.icon { font-size:27px; }
+
 .skills { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .skill {
-  background:var(--panel); border:1px solid var(--border);
-  padding:17px; border-radius:14px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:17px;
+  border-radius:14px;
 }
 .skilltop { display:flex; justify-content:space-between; gap:10px; }
 .skilltop small { color:var(--muted); }
 .track {
-  height:7px; margin-top:12px; background:var(--border);
-  border-radius:20px; overflow:hidden;
+  height:7px;
+  margin-top:12px;
+  background:var(--border);
+  border-radius:20px;
+  overflow:hidden;
 }
 .fill {
-  height:100%; width:0;
+  height:100%;
+  width:0;
   background:linear-gradient(90deg,var(--accent),var(--accent2));
-  border-radius:20px; transition:width 1.2s ease;
+  border-radius:20px;
+  transition:width 1.2s ease;
 }
 .project-img {
-  width:100%; height:155px; object-fit:cover;
-  border-radius:12px; margin-bottom:12px;
+  width:100%;
+  height:155px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:12px;
   background:var(--bg);
 }
 .pill {
-  display:inline-block; padding:4px 9px; margin:10px 4px 0 0;
-  font-size:11px; border-radius:30px;
-  color:var(--accent); border:1px solid var(--border);
+  display:inline-block;
+  padding:4px 9px;
+  margin:10px 4px 0 0;
+  font-size:11px;
+  border-radius:30px;
+  color:var(--accent);
+  border:1px solid var(--border);
 }
 .note {
   border-right:3px solid var(--accent);
-  padding:12px 16px; color:var(--muted);
-  margin-top:20px; font-size:13px;
+  padding:12px 16px;
+  color:var(--muted);
+  margin-top:20px;
+  font-size:13px;
 }
 .contactbox {
-  text-align:center; background:var(--panel);
-  border:1px solid var(--border); padding:35px 20px;
+  text-align:center;
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:35px 20px;
   border-radius:22px;
 }
-footer { text-align:center; color:var(--muted); padding:25px; border-top:1px solid var(--border); }
-.reveal { opacity:0; transform:translateY(22px); transition:opacity .7s,transform .7s; }
+.contactbox .actions { justify-content:center; }
+.social-title { margin-top:25px; color:var(--muted); font-size:14px; }
+footer {
+  text-align:center;
+  color:var(--muted);
+  padding:25px;
+  border-top:1px solid var(--border);
+}
+.reveal {
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s,transform .7s;
+}
 .reveal.show { opacity:1; transform:translateY(0); }
+
 @media(max-width:760px) {
-  .hero { grid-template-columns:1fr; text-align:center; gap:30px; padding-top:45px; }
+  .hero {
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:30px;
+    padding-top:45px;
+  }
   .hero p { margin:18px auto; }
   .actions { justify-content:center; }
   .profile { grid-row:1; width:210px; }
   .grid { grid-template-columns:1fr; }
   .skills { grid-template-columns:1fr; }
   .nav { flex-wrap:wrap; }
-  .navlinks { order:3; width:100%; justify-content:center; gap:12px; }
+  .navlinks {
+    order:3;
+    width:100%;
+    justify-content:center;
+    gap:12px;
+  }
   .navlinks a { font-size:12px; }
   section { padding:48px 0; }
 }
 @media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after { animation:none!important; scroll-behavior:auto!important; transition:none!important; }
+  *,*::before,*::after {
+    animation:none!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
 }
 </style>
 </head>
@@ -179,7 +267,7 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
       <a href="#skills">مهاراتي</a>
       <a href="#projects">مشاريعي</a>
       <a href="#experience">اهتماماتي</a>
-      <a href="#certificates">الشهادات</a>
+      <a href="#certificates">التعلم</a>
       <a href="#contact">تواصل</a>
     </nav>
     <button class="theme" id="themeBtn" aria-label="تغيير ألوان الموقع">☀️ / 🌙</button>
@@ -189,18 +277,20 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
 <main>
 <section class="container hero" id="home">
   <div class="reveal">
-    <span class="tag">متخصص Frontend في بداية رحلتي 🚀</span>
+    <span class="tag">HTML & CSS مكتملان | أتعلم JavaScript 🚀</span>
     <h1>أنا <span>خالد الجندي</span><br>أبني أفكارًا رقمية.</h1>
     <p>
-      مهتم بتطوير واجهات الويب، والتقنية، ومتابعة أسواق الأسهم،
-      واللياقة البدنية. أؤمن أن التعلم المستمر والانضباط هما أساس التطور.
+      طالب نظم ومعلومات ومهتم بتطوير واجهات الويب Frontend.
+      أنهيت تعلم HTML وCSS، وأواصل تعلم JavaScript وتطبيق
+      مهاراتي في بناء مواقع ويب عملية ومتجاوبة.
     </p>
     <div class="actions">
       <a class="btn primary" href="#projects">اكتشف مشاريعي ↙</a>
       <a class="btn" href="CV.pdf" download>📄 تحميل السيرة الذاتية</a>
-      <a class="btn" href="https://wa.me/201021854798" target="_blank" rel="noopener">تواصل معي</a>
+      <a class="btn" href="https://wa.me/201021854798" target="_blank" rel="noopener">💬 تواصل معي</a>
     </div>
   </div>
+
   <div class="profile reveal">
     <img src="https://github.com/KhaledElGendy27.png"
          alt="صورة حساب خالد الجندي على GitHub"
@@ -216,11 +306,11 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
     </div>
     <div class="card">
       <p>
-        أنا خالد محمد معوض خليل الجندي، طالب نظم ومعلومات ومهتم بمجال
-        البرمجة وتطوير الويب. أعمل على تطوير مهاراتي في HTML وCSS وJavaScript،
-        وبناء مشاريع عملية تساعدني على الانتقال من التعلم إلى التطبيق.
-        لدي اهتمام بمتابعة أسواق الأسهم وتحليل حركة السوق لأغراض التعلم،
-        كما أن ممارسة الجيم جزء من حياتي وتساعدني على الالتزام والاستمرار.
+        أنا خالد محمد معوض خليل الجندي، طالب نظم ومعلومات ومهتم
+        بالبرمجة وتطوير الويب. أنهيت تعلم HTML وCSS وأعمل حاليًا
+        على تعلم JavaScript وتطوير مهاراتي في بناء مواقع تفاعلية.
+        أسعى إلى تطبيق ما أتعلمه في مشاريع عملية والتطور باستمرار.
+        لدي أيضًا اهتمام بالأسواق المالية واللياقة البدنية.
       </p>
     </div>
   </div>
@@ -230,35 +320,45 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
   <div class="container reveal">
     <div class="section-title">
       <h2>مهاراتي <span class="gradient">التقنية</span></h2>
-      <p>مستويات مبدئية قابلة للتحديث مع تطور خبرتي.</p>
+      <p>رحلتي في تعلم وتطوير مهارات Frontend.</p>
     </div>
+
     <div class="skills">
       <div class="skill">
-        <div class="skilltop"><strong>HTML</strong><small>أساسيات</small></div>
-        <div class="track"><div class="fill" data-level="45"></div></div>
+        <div class="skilltop"><strong>HTML5</strong><small>مكتمل ✓ 100%</small></div>
+        <div class="track"><div class="fill" data-level="100"></div></div>
       </div>
+
       <div class="skill">
-        <div class="skilltop"><strong>CSS</strong><small>أساسيات</small></div>
-        <div class="track"><div class="fill" data-level="35"></div></div>
+        <div class="skilltop"><strong>CSS3</strong><small>مكتمل ✓ 100%</small></div>
+        <div class="track"><div class="fill" data-level="100"></div></div>
       </div>
+
       <div class="skill">
-        <div class="skilltop"><strong>JavaScript</strong><small>قيد التعلم</small></div>
-        <div class="track"><div class="fill" data-level="15"></div></div>
+        <div class="skilltop"><strong>JavaScript</strong><small>قيد التعلم 50%</small></div>
+        <div class="track"><div class="fill" data-level="50"></div></div>
       </div>
+
       <div class="skill">
-        <div class="skilltop"><strong>Git & GitHub</strong><small>أساسيات</small></div>
-        <div class="track"><div class="fill" data-level="25"></div></div>
+        <div class="skilltop"><strong>Git & GitHub</strong><small>تطبيق عملي</small></div>
+        <div class="track"><div class="fill" data-level="40"></div></div>
       </div>
+
       <div class="skill">
         <div class="skilltop"><strong>Responsive Design</strong><small>قيد التطوير</small></div>
-        <div class="track"><div class="fill" data-level="25"></div></div>
+        <div class="track"><div class="fill" data-level="60"></div></div>
       </div>
+
       <div class="skill">
-        <div class="skilltop"><strong>التعلم وحل المشكلات</strong><small>أطورها باستمرار</small></div>
-        <div class="track"><div class="fill" data-level="55"></div></div>
+        <div class="skilltop"><strong>Frontend Projects</strong><small>تطبيق وتطوير</small></div>
+        <div class="track"><div class="fill" data-level="50"></div></div>
       </div>
     </div>
+
     <p class="note">
+      أنهيت دراسة HTML وCSS، وأواصل تعلم JavaScript.
+      نسب التقدم تقديرية وتعبر عن رحلتي التعليمية.
+    </p>
   </div>
 </section>
 
@@ -266,17 +366,24 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
   <div class="container reveal">
     <div class="section-title">
       <h2>مشاريعي <span class="gradient">وأفكاري</span></h2>
-      <p>أضيف هنا الأعمال التي أنفذها وأطورها بنفسي.</p>
+      <p>أعمالي الحالية والأفكار التي أعمل على تطويرها.</p>
     </div>
+
     <div class="grid">
       <article class="card">
         <img class="project-img"
           src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=700&q=80"
           alt="تصميم واجهة موقع ويب">
         <h3>الموقع الشخصي Portfolio</h3>
-        <p>موقع شخصي لعرض المهارات والمشاريع والتواصل، مع تصميم متجاوب وأقسام منظمة.</p>
+        <p>موقع شخصي لعرض المهارات والمشاريع ووسائل التواصل بتصميم متجاوب.</p>
         <span class="pill">HTML</span><span class="pill">CSS</span>
-        <p style="margin-top:14px"><a href="https://github.com/KhaledElGendy27/-my-portfolio" target="_blank" rel="noopener">عرض الكود على GitHub ↗</a></p>
+        <span class="pill">JavaScript</span>
+        <p style="margin-top:14px">
+          <a href="https://github.com/KhaledElGendy27/-my-portfolio" target="_blank" rel="noopener">عرض الكود على GitHub ↗</a>
+        </p>
+        <p style="margin-top:10px">
+          <a href="https://khaledelgendy27.github.io/-my-portfolio/" target="_blank" rel="noopener">زيارة الموقع ↗</a>
+        </p>
       </article>
 
       <article class="card">
@@ -284,20 +391,21 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
           src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80"
           alt="تقنية الرعاية الصحية">
         <h3>نظام إدارة المستشفى الذكي</h3>
-        <p>فكرة مشروع أكاديمي لتنظيم بيانات المرضى والمواعيد والمعامل والتحصيل، وتقليل الاعتماد على الأوراق.</p>
-        <span class="pill">تحليل نظم</span><span class="pill">فكرة أكاديمية</span>
+        <p>فكرة مشروع أكاديمي لتنظيم بيانات المرضى والمواعيد والمعامل والحسابات.</p>
+        <span class="pill">تحليل نظم</span><span class="pill">مشروع أكاديمي</span>
       </article>
 
       <article class="card">
         <img class="project-img"
           src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=700&q=80"
-          alt="شاشة رسوم بيانية للأسواق المالية">
-        <h3>فكرة لوحة متابعة الأسواق</h3>
-        <p>فكرة مستقبلية لواجهة تعرض بيانات السوق والرسوم البيانية ومعلومات الأسهم بطريقة منظمة.</p>
+          alt="رسوم بيانية للأسواق المالية">
+        <h3>لوحة متابعة الأسواق</h3>
+        <p>فكرة مستقبلية لعرض بيانات السوق والرسوم البيانية ومعلومات الأسهم.</p>
         <span class="pill">Project Idea</span><span class="pill">قيد التخطيط</span>
       </article>
     </div>
-    <p class="note">صور المشاريع توضيحية. لا تعرض أي فكرة على أنها مشروع مكتمل إلا بعد تنفيذها فعلًا.</p>
+
+    <p class="note">صور المشاريع توضيحية. الأفكار غير المنفذة ليست مشاريع مكتملة.</p>
   </div>
 </section>
 
@@ -305,23 +413,26 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
   <div class="container reveal">
     <div class="section-title">
       <h2>اهتماماتي <span class="gradient">وخلفيتي</span></h2>
-      <p>ثلاثة مجالات أعمل على تطوير نفسي فيها.</p>
+      <p>مجالات أستمتع بالتعلم والتطور فيها.</p>
     </div>
+
     <div class="grid">
       <article class="card">
         <div class="icon">💻</div>
         <h3>البرمجة وتطوير الويب</h3>
-        <p>أتعلم تطوير واجهات الويب، وأطبق ما أتعلمه في مشاريع عملية، وأسعى لبناء حلول سهلة الاستخدام.</p>
+        <p>أتعلم تطوير واجهات الويب وأطبق ما أتعلمه في مشاريع عملية.</p>
       </article>
+
       <article class="card">
         <div class="icon">📈</div>
         <h3>الأسهم والأسواق المالية</h3>
-        <p>لدي تجربة واهتمام بمجال الأسهم ومتابعة حركة الأسواق. أطور معرفتي بالتحليل والبيانات واتخاذ القرارات المبنية على المعلومات.</p>
+        <p>أهتم بمتابعة الأسواق وتعلم تحليل البيانات وفهم حركة السوق.</p>
       </article>
+
       <article class="card">
         <div class="icon">🏋️</div>
         <h3>الجيم واللياقة البدنية</h3>
-        <p>مهتم بالتمرين وبناء اللياقة. الرياضة تعزز لدي الالتزام والصبر والعمل المستمر لتحقيق الأهداف.</p>
+        <p>أهتم بالتمرين وبناء اللياقة والالتزام بتحقيق الأهداف.</p>
       </article>
     </div>
   </div>
@@ -330,15 +441,26 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
 <section id="certificates">
   <div class="container reveal">
     <div class="section-title">
-      <h2>الكورسات <span class="gradient">والشهادات</span></h2>
-      <p>مساحة لعرض التعلم والتطوير المهني.</p>
+      <h2>رحلتي في <span class="gradient">التعلم</span></h2>
+      <p>خطواتي الحالية نحو تطوير مهارات Frontend.</p>
     </div>
+
     <div class="card">
       <div class="icon">🎓</div>
-      <h3>التعلم المستمر في Frontend</h3>
-      <p>أعمل على تطوير مهاراتي في HTML وCSS وJavaScript. ستُضاف أسماء الكورسات والشهادات بعد إتمامها والحصول عليها.</p>
-      <span class="pill">Learning</span>
-      <span class="pill">Frontend Development</span>
+      <h3>Frontend Development</h3>
+      <p>
+        ✓ إكمال HTML
+        <br>
+        ✓ إكمال CSS
+        <br>
+        ⏳ مواصلة تعلم JavaScript
+        <br>
+        🚀 الاستعداد لبناء مشاريع أكثر تقدمًا.
+      </p>
+      <span class="pill">HTML5</span>
+      <span class="pill">CSS3</span>
+      <span class="pill">JavaScript</span>
+      <p class="note">ستُضاف أسماء الكورسات والشهادات بعد إتمامها والحصول عليها.</p>
     </div>
   </div>
 </section>
@@ -346,16 +468,50 @@ footer { text-align:center; color:var(--muted); padding:25px; border-top:1px sol
 <section id="contact">
   <div class="container reveal">
     <div class="contactbox">
-      <h2>عندك فرصة أو مشروع؟</h2>
+      <h2>تواصل <span class="gradient">معي</span></h2>
       <p style="color:var(--muted);margin:12px 0 22px">
-        يسعدني التواصل لمناقشة فرص العمل والتعاون والمشاريع التقنية.
+        يسعدني التواصل لمناقشة فرص التدريب والتعاون والمشاريع التقنية.
       </p>
-      <div class="actions" style="justify-content:center">
-        <a class="btn primary" href="https://wa.me/201021854798" target="_blank" rel="noopener">💬 واتساب</a>
-        <a class="btn" href="mailto:YOUR_EMAIL@example.com">✉️ البريد الإلكتروني</a>
-        <a class="btn" href="https://github.com/KhaledElGendy27" target="_blank" rel="noopener">🐙 GitHub</a>
+
+      <div class="actions">
+        <a class="btn primary"
+           href="https://wa.me/201021854798"
+           target="_blank" rel="noopener">
+          💬 واتساب
+        </a>
+
+        <a class="btn"
+           href="https://www.instagram.com/khaled__el_jundi?xtok=MXgyYW42cjF3cmEyZw=="
+           target="_blank" rel="noopener">
+          📸 Instagram
+        </a>
+
+        <a class="btn"
+           href="https://www.facebook.com/share/1C3Xdn8KZ1/"
+           target="_blank" rel="noopener">
+          📘 Facebook
+        </a>
+
+        <a class="btn"
+           href="https://www.tiktok.com/@kaldhmohamed?_r=1&_t=ZS-9AZPjHEVFwn"
+           target="_blank" rel="noopener">
+          🎵 TikTok
+        </a>
+
+        <a class="btn"
+           href="https://github.com/KhaledElGendy27"
+           target="_blank" rel="noopener">
+          🐙 GitHub
+        </a>
+
+        <a class="btn"
+           href="mailto:YOUR_EMAIL@example.com">
+          ✉️ البريد الإلكتروني
+        </a>
       </div>
-      <p class="note">غيّر YOUR_EMAIL@example.com إلى بريدك الحقيقي قبل نشر الموقع.</p>
+
+      <p class="social-title">تقدر تتابعني على منصات التواصل الاجتماعي</p>
+      <p class="note">استبدل YOUR_EMAIL@example.com ببريدك الحقيقي لإتاحة التواصل عبر البريد الإلكتروني.</p>
     </div>
   </div>
 </section>
@@ -377,15 +533,19 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
+
       entry.target.querySelectorAll(".fill").forEach((bar) => {
         bar.style.width = bar.dataset.level + "%";
       });
+
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+document.querySelectorAll(".reveal").forEach((el) => {
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
- 
