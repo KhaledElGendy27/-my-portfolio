@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07111f">
-  <meta name="description" content="الموقع الشخصي لخالد الجندي — مبرمج Frontend">
+  <meta name="description" content="الموقع الشخصي لخالد الجندي — طالب نظم ومعلومات، مطور Frontend، لاعب جيم ومدرب رياضي وله تجربة في أسواق المال.">
   <title>Khaled ElGendy | My Portfolio</title>
 
   <style>
@@ -22,7 +22,7 @@
 
     body.light {
       --bg: #f2f6fc;
-      --panel: #ffffff;
+      --panel: #fff;
       --text: #13243b;
       --muted: #61718a;
       --border: rgba(10,30,60,.12);
@@ -147,10 +147,11 @@
       color: transparent;
     }
 
-    .hero p, .section-desc {
+    .hero p,
+    .section-desc {
       color: var(--muted);
       font-size: 16px;
-      max-width: 650px;
+      max-width: 720px;
     }
 
     .hero-buttons {
@@ -168,7 +169,7 @@
       border-radius: 12px;
       border: 1px solid var(--border);
       font-weight: bold;
-      transition: transform .2s, opacity .2s;
+      transition: transform .2s;
     }
 
     .btn:hover {
@@ -230,6 +231,28 @@
 
     .section-heading h2 span {
       color: var(--accent);
+    }
+
+    .section-desc {
+      line-height: 2;
+    }
+
+    .about-text {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
     }
 
     .grid {
@@ -436,7 +459,9 @@
     }
 
     @media (max-width: 520px) {
-      .grid, .skills-grid, .contact-grid {
+      .grid,
+      .skills-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -451,6 +476,10 @@
       .card {
         padding: 20px;
       }
+
+      .about-text {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -463,9 +492,9 @@
       <div class="nav-links">
         <a href="#home">الرئيسية</a>
         <a href="#about">عني</a>
+        <a href="#experience">خبراتي</a>
         <a href="#skills">مهاراتي</a>
         <a href="#projects">مشاريعي</a>
-        <a href="#learning">التعلم</a>
         <a href="#contact">تواصل معي</a>
       </div>
 
@@ -486,14 +515,15 @@
         </h1>
 
         <p>
-          طالب نظم ومعلومات ومهتم بتطوير واجهات الويب.
-          أتعلم Frontend خطوة بخطوة وأسعى لبناء مواقع عصرية،
-          سريعة، ومتجاوبة مع جميع الشاشات.
+          طالب نظم ومعلومات، ومهتم بتطوير واجهات الويب.
+          لدي تجربة في أسواق المال، وشغف بعالم البرمجة،
+          كما أنني لاعب جيم ومدرب في النادي.
+          أسعى إلى تطوير نفسي باستمرار وبناء مستقبل مهني مميز.
         </p>
 
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">شاهد مشاريعي</a>
-          <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+          <a href="#about" class="btn btn-secondary">اعرف قصتي</a>
         </div>
       </div>
 
@@ -509,10 +539,42 @@
     <section id="about">
       <div class="container">
         <div class="section-heading reveal">
-          <h2>نبذة <span>عني</span></h2>
+          <h2>قصتي <span>ونبذة عني</span></h2>
           <p class="section-desc">
-            أعمل على تطوير مهاراتي التقنية وبناء مشروعات عملية تساعدني
-            على الاستعداد لسوق العمل.
+            رحلتي تجمع بين أسواق المال والتكنولوجيا والرياضة،
+            وكل تجربة منها أضافت لي شيئًا جديدًا.
+          </p>
+        </div>
+
+        <div class="about-text reveal">
+          <p>
+            أنا خالد الجندي، طالب في السنة الرابعة بتخصص نظم ومعلومات،
+            ومطور Frontend في بداية رحلتي بعالم البرمجة.
+          </p>
+
+          <p>
+            بدأت تجربتي المهنية في أسواق المال، حيث خضت تجربة مختلفة
+            ساعدتني على الاهتمام بالتحليل والتفكير المنطقي ومتابعة
+            حركة الأسواق. وبعد ذلك قررت التوجه إلى عالم البرمجة،
+            وبدأت رحلة جديدة في تعلم تطوير مواقع الويب وبناء المشروعات التقنية.
+          </p>
+
+          <p>
+            أتعلم تطوير الواجهات باستخدام HTML وCSS وJavaScript،
+            وأسعى إلى تحويل ما أتعلمه إلى تطبيقات ومشروعات عملية
+            تساعدني على اكتساب الخبرة والاستعداد لسوق العمل.
+          </p>
+
+          <p>
+            وبجانب اهتمامي بالتكنولوجيا، أنا لاعب جيم ومدرب في النادي.
+            الرياضة جزء مهم من حياتي، وقد ساعدتني على تقدير الالتزام
+            والانضباط والاستمرارية والعمل لتحقيق الأهداف.
+          </p>
+
+          <p>
+            أؤمن أن التطور الحقيقي يأتي من الاستمرار في التعلم،
+            والاستفادة من التجارب المختلفة، وعدم التوقف عند مجال واحد.
+            هدفي هو بناء مستقبل قوي في التكنولوجيا مع الحفاظ على شغفي بالرياضة.
           </p>
         </div>
 
@@ -521,27 +583,70 @@
             <div class="card-icon">🎓</div>
             <h3>دراستي</h3>
             <p>
-              طالب في السنة الرابعة بتخصص نظم ومعلومات،
-              وأهتم بربط الدراسة النظرية بالتطبيق العملي.
+              طالب نظم ومعلومات، وأسعى إلى الربط بين دراستي
+              والتطبيق العملي في مجال التكنولوجيا.
             </p>
           </article>
 
           <article class="card reveal">
             <div class="card-icon">💻</div>
-            <h3>مجالي</h3>
+            <h3>شغفي بالبرمجة</h3>
             <p>
-              مهتم بتطوير واجهات المواقع باستخدام HTML وCSS
-              وJavaScript، وتحسين تجربة المستخدم.
+              أعمل على تطوير مهاراتي في Frontend وبناء مواقع
+              عصرية وسهلة الاستخدام ومتوافقة مع مختلف الشاشات.
             </p>
           </article>
 
           <article class="card reveal">
-            <div class="card-icon">🚀</div>
-            <h3>هدفي</h3>
+            <div class="card-icon">🏆</div>
+            <h3>التطوير المستمر</h3>
             <p>
-              تطوير مشروعات قوية، وإنشاء Portfolio احترافي،
-              والاستعداد للحصول على أول فرصة عمل في مجال Frontend.
+              أؤمن بأهمية التعلم والتطبيق والانضباط في تحقيق
+              الأهداف المهنية والشخصية.
             </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>خبراتي <span>واهتماماتي</span></h2>
+          <p class="section-desc">
+            ثلاث تجارب ومجالات تعكس جوانب مختلفة من شخصيتي.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">📈</div>
+            <h3>أسواق المال</h3>
+            <p>
+              لدي تجربة سابقة في أسواق المال، واهتمام بمتابعة
+              الأسواق والتحليل وفهم حركة الأسعار وإدارة القرارات.
+            </p>
+            <span class="status">تجربة سابقة</span>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">💻</div>
+            <h3>الانتقال إلى البرمجة</h3>
+            <p>
+              اتجهت إلى عالم البرمجة لتعلم مهارات جديدة،
+              وبناء مواقع الويب وتحويل الأفكار إلى مشروعات عملية.
+            </p>
+            <span class="status">رحلة مستمرة</span>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🏋️</div>
+            <h3>لاعب جيم ومدرب</h3>
+            <p>
+              لاعب جيم ومدرب في النادي، أهتم باللياقة البدنية
+              والتدريب ومساعدة الآخرين على الالتزام بأهدافهم الرياضية.
+            </p>
+            <span class="status">الرياضة أسلوب حياة</span>
           </article>
         </div>
       </div>
@@ -620,7 +725,7 @@
         <div class="section-heading reveal">
           <h2>مشاريعي <span>الأولى</span></h2>
           <p class="section-desc">
-            أضيف هنا مشروعاتي العملية مع تقدمي في رحلة تعلم البرمجة.
+            أعمل على تطبيق ما أتعلمه في مشروعات عملية قابلة للتطوير.
           </p>
         </div>
 
@@ -629,8 +734,8 @@
             <div class="card-icon">🌐</div>
             <h3>Personal Portfolio</h3>
             <p>
-              موقعي الشخصي لعرض نبذة عني ومهاراتي وروابط التواصل،
-              مع تصميم متجاوب ودعم الوضع الفاتح والداكن.
+              موقعي الشخصي لعرض قصتي ومهاراتي وخبراتي ومشاريعي
+              وروابط التواصل، مع تصميم متجاوب.
             </p>
             <div class="project-links">
               <a class="small-link"
@@ -667,26 +772,35 @@
     <section id="interests">
       <div class="container">
         <div class="section-heading reveal">
-          <h2>اهتماماتي <span>ومميزاتي</span></h2>
+          <h2>ما أؤمن به <span>في رحلتي</span></h2>
         </div>
 
         <div class="grid">
           <article class="card reveal">
-            <div class="card-icon">🎨</div>
-            <h3>تصميم الواجهات</h3>
-            <p>الاهتمام بتنسيق الألوان والتفاصيل وتقديم تجربة استخدام واضحة.</p>
+            <div class="card-icon">📚</div>
+            <h3>التعلم المستمر</h3>
+            <p>
+              أطور نفسي من خلال التعلم والتجربة وتحويل المعلومات
+              إلى مهارات عملية.
+            </p>
           </article>
 
           <article class="card reveal">
-            <div class="card-icon">🧠</div>
-            <h3>التعلم المستمر</h3>
-            <p>تطوير المهارات من خلال الدروس والتجربة وحل المشكلات.</p>
+            <div class="card-icon">💪</div>
+            <h3>الالتزام والانضباط</h3>
+            <p>
+              أؤمن بأن الاستمرارية والالتزام من أهم أسباب
+              تحقيق الأهداف في الرياضة والعمل والتعلم.
+            </p>
           </article>
 
           <article class="card reveal">
             <div class="card-icon">🤝</div>
-            <h3>العمل الجماعي</h3>
-            <p>التعاون مع الفريق وتقسيم المهام والمشاركة في بناء المشروعات.</p>
+            <h3>التعاون والعمل الجماعي</h3>
+            <p>
+              أهتم بتبادل الخبرات والتعاون مع الآخرين
+              للوصول إلى نتائج أفضل.
+            </p>
           </article>
         </div>
       </div>
@@ -695,10 +809,10 @@
     <section id="learning">
       <div class="container">
         <div class="section-heading reveal">
-          <h2>التعلم <span>والتطوير</span></h2>
+          <h2>رحلة <span>التعلم</span></h2>
           <p class="section-desc">
-            أركز على بناء أساس قوي في تطوير الواجهات ثم الانتقال
-            إلى تطبيقات أكثر تقدمًا.
+            أركز على بناء أساس قوي في تطوير الواجهات،
+            ثم الانتقال إلى تطبيقات أكثر تقدمًا.
           </p>
         </div>
 
@@ -798,22 +912,20 @@
   </footer>
 
   <script>
-    // السنة الحالية في أسفل الموقع
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // التبديل بين الوضع الفاتح والداكن
     const themeBtn = document.getElementById("themeBtn");
 
     themeBtn.addEventListener("click", function () {
       document.body.classList.toggle("light");
 
       const isLight = document.body.classList.contains("light");
+
       document.querySelector('meta[name="theme-color"]')
         .setAttribute("content", isLight ? "#f2f6fc" : "#07111f");
     });
 
-    // ظهور العناصر عند الوصول إليها أثناء التمرير
     const revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -830,14 +942,16 @@
       revealObserver.observe(element);
     });
 
-    // تحريك أشرطة المهارات
     const skillObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             const bar = entry.target;
             const level = Number(bar.dataset.level);
-            bar.style.width = Math.max(0, Math.min(100, level)) + "%";
+
+            bar.style.width =
+              Math.max(0, Math.min(100, level)) + "%";
+
             skillObserver.unobserve(bar);
           }
         });
