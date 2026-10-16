@@ -1,10 +1,14 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07111f">
-  <meta name="description" content="الموقع الشخصي لخالد الجندي — طالب نظم ومعلومات ومهتم بتطوير Frontend وأسواق المال والرياضة.">
-  <title>Khaled ElGendy | My Portfolio</title>  <style>
+  <meta name="description" content="الموقع الشخصي لخالد الجندي، طالب نظم ومعلومات ومطور واجهات ويب بخبرة سنتين.">
+  <title>Khaled ElGendy | My Portfolio</title>
+
+  <style>
     :root {
       --bg: #07111f;
       --panel: #0d1b2e;
@@ -286,47 +290,6 @@
       margin-bottom: 12px;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .skill {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 18px;
-    }
-
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .skill-info span:last-child {
-      color: var(--accent);
-      direction: ltr;
-    }
-
-    .bar {
-      height: 8px;
-      background: rgba(130,150,180,.17);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      width: 0;
-      border-radius: 20px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      transition: width 1.2s ease;
-    }
-
     .project-links {
       display: flex;
       gap: 10px;
@@ -338,10 +301,6 @@
       color: var(--accent);
       font-size: 13px;
       font-weight: bold;
-    }
-
-    .learning-card {
-      border-right: 3px solid var(--accent);
     }
 
     .status {
@@ -456,7 +415,6 @@
 
     @media (max-width: 520px) {
       .grid,
-      .skills-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
@@ -477,353 +435,282 @@
         padding: 20px;
       }
     }
-  </style></head><body>
+  </style>
+</head>
+
+<body>
   <header>
     <nav class="container">
-      <a href="#home" class="logo">Khaled ElGendy</a>  <div class="nav-links">
-    <a href="#home">الرئيسية</a>
-    <a href="#about">عني</a>
-    <a href="#skills">مهاراتي</a>
-    <a href="#projects">مشاريعي</a>
-    <a href="#learning">رحلة التعلم</a>
-    <a href="#contact">تواصل معي</a>
-  </div>
+      <a href="#home" class="logo">Khaled ElGendy</a>
 
-  <button class="theme-btn" id="themeBtn" aria-label="تغيير المظهر">
-    ☀️ / 🌙
-  </button>
-</nav>
+      <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#projects">مشاريعي</a>
+        <a href="#interests">اهتماماتي</a>
+        <a href="#contact">تواصل معي</a>
+      </div>
 
-  </header>  <main>
+      <button class="theme-btn" id="themeBtn"
+              aria-label="تغيير المظهر">
+        ☀️ / 🌙
+      </button>
+    </nav>
+  </header>
+
+  <main>
     <section class="container hero" id="home">
       <div class="hero-content reveal">
-        <span class="tag">Information Systems Student · Frontend Developer</span>    <h1>
-      أهلاً، أنا<br>
-      <span class="gradient">خالد الجندي</span>
-    </h1>
+        <span class="tag">
+          Information Systems Student · Frontend Developer
+        </span>
 
-    <p>
-      طالب نظم ومعلومات، ومهتم بتطوير واجهات الويب.
-      لدي تجربة في أسواق المال، وشغف بعالم البرمجة،
-      كما أنني لاعب جيم ومدرب في النادي.
-      أسعى إلى تطوير نفسي باستمرار وبناء مستقبل مهني مميز.
-    </p>
+        <h1>
+          أهلاً، أنا<br>
+          <span class="gradient">خالد الجندي</span>
+        </h1>
 
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">شاهد مشاريعي</a>
-      <a href="#about" class="btn btn-secondary">اعرف قصتي</a>
-    </div>
-  </div>
-
-  <div class="profile reveal">
-    <img
-      src="https://raw.githubusercontent.com/KhaledElGendy27/-my-portfolio/main/Picsart_26-08-15_01-40-24-959.jpg"
-      alt="صورة خالد الجندي الشخصية"
-      onerror="this.onerror=null;this.src='https://github.com/KhaledElGendy27.png';"
-    >
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="section-heading reveal">
-      <h2>قصتي <span>ونبذة عني</span></h2>
-      <p class="section-desc">
-        رحلتي تجمع بين أسواق المال والتكنولوجيا والرياضة،
-        وكل تجربة منها أضافت لي شيئًا جديدًا.
-      </p>
-    </div>
-
-    <div class="about-text reveal">
-      <p>
-        أنا خالد الجندي، طالب في السنة الرابعة بتخصص نظم ومعلومات،
-        ومهتم بتطوير واجهات الويب.
-      </p>
-
-      <p>
-        بدأت تجربتي في أسواق المال، حيث اكتسبت اهتمامًا بالتحليل
-        والتفكير المنطقي ومتابعة حركة الأسواق. وبعد ذلك قررت التوجه
-        إلى عالم البرمجة، وبدأت رحلة جديدة في تعلم تطوير مواقع الويب
-        وبناء المشروعات التقنية.
-      </p>
-
-      <p>
-        أتعلم تطوير الواجهات باستخدام HTML وCSS وJavaScript،
-        وأسعى إلى تحويل ما أتعلمه إلى تطبيقات ومشروعات عملية
-        تساعدني على اكتساب الخبرة والاستعداد لسوق العمل.
-      </p>
-
-      <p>
-        وبجانب اهتمامي بالتكنولوجيا، أنا لاعب جيم ومدرب في النادي.
-        الرياضة جزء مهم من حياتي، وقد ساعدتني على تقدير الالتزام
-        والانضباط والاستمرارية والعمل لتحقيق الأهداف.
-      </p>
-
-      <p>
-        أؤمن أن التطور الحقيقي يأتي من الاستمرار في التعلم،
-        والاستفادة من التجارب المختلفة. هدفي هو بناء مستقبل قوي
-        في التكنولوجيا مع الحفاظ على شغفي بالرياضة.
-      </p>
-    </div>
-
-    <div class="grid">
-      <article class="card reveal">
-        <div class="card-icon">🎓</div>
-        <h3>دراستي</h3>
         <p>
-          طالب نظم ومعلومات، وأسعى إلى الربط بين دراستي
-          والتطبيق العملي في مجال التكنولوجيا.
+          طالب نظم ومعلومات ومطور واجهات ويب، لدي خبرة لمدة سنتين
+          في مجال تطوير الويب. أهتم ببناء مواقع عصرية وسهلة الاستخدام،
+          وأسعى باستمرار إلى تطوير خبراتي التقنية. وبجانب البرمجة،
+          أنا لاعب جيم ومدرب في النادي، وأؤمن بأهمية الالتزام
+          والتطوير المستمر لتحقيق الأهداف.
         </p>
-      </article>
 
-      <article class="card reveal">
-        <div class="card-icon">💻</div>
-        <h3>شغفي بالبرمجة</h3>
-        <p>
-          أعمل على تطوير مهاراتي في Frontend وبناء مواقع
-          عصرية وسهلة الاستخدام ومتوافقة مع مختلف الشاشات.
-        </p>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-icon">🏆</div>
-        <h3>التطوير المستمر</h3>
-        <p>
-          أؤمن بأهمية التعلم والتطبيق والانضباط في تحقيق
-          الأهداف المهنية والشخصية.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div class="section-heading reveal">
-      <h2>المهارات <span>التقنية</span></h2>
-      <p class="section-desc">
-        أمتلك خبرة لمدة سنتين في مجال تطوير الويب، وأسعى إلى توظيف مهاراتي
-        في بناء مواقع احترافية وعصرية وتقديم حلول تقنية فعّالة.
-      </p>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill reveal">
-        <div class="skill-info">
-          <span>HTML5</span><span>70%</span>
-        </div>
-        <div class="bar">
-          <div class="bar-fill" data-level="70"></div>
-        </div>
-      </div>
-
-      <div class="skill reveal">
-        <div class="skill-info">
-          <span>CSS3</span><span>60%</span>
-        </div>
-        <div class="bar">
-          <div class="bar-fill" data-level="60"></div>
-        </div>
-      </div>
-
-      <div class="skill reveal">
-        <div class="skill-info">
-          <span>JavaScript</span><span>20%</span>
-        </div>
-        <div class="bar">
-          <div class="bar-fill" data-level="20"></div>
-        </div>
-      </div>
-
-      <div class="skill reveal">
-        <div class="skill-info">
-          <span>Git & GitHub</span><span>40%</span>
-        </div>
-        <div class="bar">
-          <div class="bar-fill" data-level="40"></div>
-        </div>
-      </div>
-
-      <div class="skill reveal">
-        <div class="skill-info">
-          <span>Responsive Design</span><span>50%</span>
-        </div>
-        <div class="bar">
-          <div class="bar-fill" data-level="50"></div>
-        </div>
-      </div>
-
-      <div class="skill reveal">
-        <div class="skill-info">
-          <span>Frontend Projects</span><span>30%</span>
-        </div>
-        <div class="bar">
-          <div class="bar-fill" data-level="30"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div class="section-heading reveal">
-      <h2>مشاريعي <span>الأولى</span></h2>
-      <p class="section-desc">
-        أعمل على تطبيق ما أتعلمه في مشروعات عملية قابلة للتطوير.
-      </p>
-    </div>
-
-    <div class="grid">
-      <article class="card reveal">
-        <div class="card-icon">🌐</div>
-        <h3>Personal Portfolio</h3>
-        <p>
-          موقعي الشخصي لعرض قصتي ومهاراتي ومشاريعي
-          وروابط التواصل، مع تصميم متجاوب.
-        </p>
-        <div class="project-links">
-          <a class="small-link"
-             href="https://github.com/KhaledElGendy27/-my-portfolio"
-             target="_blank" rel="noopener noreferrer">
-            عرض الكود على GitHub ↗
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            شاهد مشاريعي
+          </a>
+          <a href="#about" class="btn btn-secondary">
+            اعرف قصتي
           </a>
         </div>
-      </article>
+      </div>
 
-      <article class="card reveal">
-        <div class="card-icon">🏥</div>
-        <h3>Smart Hospital System</h3>
-        <p>
-          فكرة نظام لإدارة المستشفى يربط بيانات المرضى
-          والمواعيد والعيادات والمعامل والحسابات في مكان واحد.
-        </p>
-        <span class="status">مشروع قيد التطوير</span>
-      </article>
+      <div class="profile reveal">
+        <img
+          src="https://raw.githubusercontent.com/KhaledElGendy27/-my-portfolio/main/Picsart_26-08-15_01-40-24-959.jpg"
+          alt="صورة خالد الجندي الشخصية"
+          onerror="this.onerror=null;this.src='https://github.com/KhaledElGendy27.png';"
+        >
+      </div>
+    </section>
 
-      <article class="card reveal">
-        <div class="card-icon">⚡</div>
-        <h3>مشروع Frontend القادم</h3>
-        <p>
-          أعمل على تعلم JavaScript وتطبيق المفاهيم الجديدة
-          في مشروعات تفاعلية لزيادة خبرتي العملية.
-        </p>
-        <span class="status">قيد التعلم</span>
-      </article>
-    </div>
-  </div>
-</section>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>قصتي <span>ونبذة عني</span></h2>
+          <p class="section-desc">
+            خبرة في تطوير الويب، واهتمام بالتكنولوجيا والرياضة،
+            وطموح مستمر نحو مستقبل مهني أفضل.
+          </p>
+        </div>
 
-<section id="interests">
-  <div class="container">
-    <div class="section-heading reveal">
-      <h2>ما أؤمن به <span>في رحلتي</span></h2>
-    </div>
+        <div class="about-text reveal">
+          <p>
+            أنا خالد الجندي، طالب في السنة الرابعة بتخصص نظم ومعلومات،
+            ومهتم بتطوير واجهات مواقع الويب.
+          </p>
 
-    <div class="grid">
-      <article class="card reveal">
-        <div class="card-icon">📚</div>
-        <h3>التعلم المستمر</h3>
-        <p>
-          أطور نفسي من خلال التعلم والتجربة وتحويل المعلومات
-          إلى مهارات عملية.
-        </p>
-      </article>
+          <p>
+            لدي خبرة لمدة سنتين في مجال تطوير الويب، وأهتم بتصميم
+            صفحات منظمة وعصرية وسهلة الاستخدام. أعمل على توظيف
+            معرفتي في HTML وCSS وJavaScript لبناء تجارب ويب
+            مناسبة لمختلف الأجهزة والشاشات.
+          </p>
 
-      <article class="card reveal">
-        <div class="card-icon">💪</div>
-        <h3>الالتزام والانضباط</h3>
-        <p>
-          أؤمن بأن الاستمرارية والالتزام من أهم أسباب
-          تحقيق الأهداف في الرياضة والعمل والتعلم.
-        </p>
-      </article>
+          <p>
+            كما أهتم بالتفكير المنطقي وحل المشكلات، وأسعى إلى
+            الاستفادة من دراستي وتجربتي في بناء مشروعات عملية
+            وتطوير قدراتي المهنية باستمرار.
+          </p>
 
-      <article class="card reveal">
-        <div class="card-icon">🤝</div>
-        <h3>التعاون والعمل الجماعي</h3>
-        <p>
-          أهتم بتبادل الخبرات والتعاون مع الآخرين
-          للوصول إلى نتائج أفضل.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
+          <p>
+            وبجانب التكنولوجيا، أنا لاعب جيم ومدرب في النادي.
+            ساعدتني الرياضة على تقدير الالتزام والانضباط والاستمرارية
+            والعمل لتحقيق الأهداف.
+          </p>
 
-<section id="learning">
-  <div class="container">
-    <div class="section-heading reveal">
-      <h2>رحلة <span>التعلم</span></h2>
-      <p class="section-desc">
-        أركز على بناء أساس قوي في تطوير الواجهات،
-        ثم الانتقال إلى تطبيقات أكثر تقدمًا.
-      </p>
-    </div>
+          <p>
+            هدفي هو الاستمرار في تطوير خبراتي، وبناء مشروعات
+            احترافية، وتحقيق تقدم حقيقي في مسيرتي المهنية.
+          </p>
+        </div>
 
-    <div class="grid">
-      <article class="card learning-card reveal">
-        <h3>HTML</h3>
-        <p>بناء هيكل صفحات الويب وتنظيم المحتوى والعناصر.</p>
-        <span class="status">قيد التطوير</span>
-      </article>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">🎓</div>
+            <h3>دراستي</h3>
+            <p>
+              طالب نظم ومعلومات، وأسعى إلى الربط بين دراستي
+              والتطبيق العملي في مجال التكنولوجيا.
+            </p>
+          </article>
 
-      <article class="card learning-card reveal">
-        <h3>CSS</h3>
-        <p>تنسيق الصفحات والألوان والتخطيطات والاستجابة للشاشات.</p>
-        <span class="status">قيد التطوير</span>
-      </article>
+          <article class="card reveal">
+            <div class="card-icon">💻</div>
+            <h3>خبرتي في الويب</h3>
+            <p>
+              خبرة لمدة سنتين في مجال تطوير الويب،
+              مع اهتمام ببناء مواقع عصرية ومتجاوبة.
+            </p>
+          </article>
 
-      <article class="card learning-card reveal">
-        <h3>JavaScript</h3>
-        <p>تعلم أساسيات البرمجة وإضافة التفاعل إلى صفحات الويب.</p>
-        <span class="status">قيد التعلم</span>
-      </article>
-    </div>
-  </div>
-</section>
+          <article class="card reveal">
+            <div class="card-icon">🏆</div>
+            <h3>التطوير المستمر</h3>
+            <p>
+              أؤمن بأهمية التعلم والتطبيق والانضباط
+              في تحقيق الأهداف المهنية والشخصية.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-heading reveal">
-      <h2>تواصل <span>معي</span></h2>
-      <p class="section-desc">
-        يمكنك التواصل معي أو زيارة حساب GitHub لمتابعة مشاريعي وتقدمي.
-      </p>
-    </div>
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>مشاريعي <span>البرمجية</span></h2>
+          <p class="section-desc">
+            نماذج ومبادرات توضح اهتمامي بتطوير الويب
+            وتحويل الأفكار إلى مشروعات قابلة للتطوير.
+          </p>
+        </div>
 
-    <div class="contact-grid">
-      <a class="contact-item reveal"
-         href="https://github.com/KhaledElGendy27"
-         target="_blank" rel="noopener noreferrer">
-        <span class="contact-icon">💻</span>
-        <span>
-          <small>GitHub</small>
-          <strong>KhaledElGendy27</strong>
-        </span>
-      </a>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">🌐</div>
+            <h3>Personal Portfolio</h3>
+            <p>
+              موقعي الشخصي لعرض نبذتي وخبراتي واهتماماتي
+              ومشاريعي وروابط التواصل، بتصميم متجاوب.
+            </p>
 
-      <a class="contact-item reveal"
-         href="https://wa.me/201021854798"
-         target="_blank" rel="noopener noreferrer">
-        <span class="contact-icon">📱</span>
-        <span>
-          <small>WhatsApp</small>
-          <strong>تواصل معي على واتساب</strong>
-        </span>
-      </a>
-    </div>
-  </div>
-</section>
+            <div class="project-links">
+              <a
+                class="small-link"
+                href="https://github.com/KhaledElGendy27/-my-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                عرض الكود على GitHub ↗
+              </a>
+            </div>
+          </article>
 
-  </main>  <footer>
+          <article class="card reveal">
+            <div class="card-icon">🏥</div>
+            <h3>Smart Hospital System</h3>
+            <p>
+              فكرة نظام لإدارة المستشفى وتنظيم بيانات المرضى
+              والمواعيد والعيادات والمعامل والحسابات في مكان واحد.
+            </p>
+            <span class="status">مشروع قيد التطوير</span>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">⚡</div>
+            <h3>Frontend Web Projects</h3>
+            <p>
+              تطوير أفكار لمواقع تفاعلية بهدف تطبيق مفاهيم
+              تطوير الواجهات وتحسين تجربة المستخدم.
+            </p>
+            <span class="status">قيد التطوير</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>ما أؤمن به <span>في رحلتي</span></h2>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card-icon">📚</div>
+            <h3>التعلم المستمر</h3>
+            <p>
+              أحرص على اكتساب المعرفة وتطوير خبراتي
+              وتحويل ما أتعلمه إلى تطبيقات عملية.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">💪</div>
+            <h3>الالتزام والانضباط</h3>
+            <p>
+              أؤمن بأن الاستمرارية والالتزام من أهم أسباب
+              تحقيق الأهداف في الرياضة والعمل.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon">🤝</div>
+            <h3>العمل الجماعي</h3>
+            <p>
+              أهتم بتبادل الخبرات والتعاون مع الآخرين
+              للوصول إلى نتائج أفضل.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>تواصل <span>معي</span></h2>
+          <p class="section-desc">
+            يمكنك التواصل معي أو زيارة حساب GitHub
+            لمتابعة مشاريعي وأعمالي البرمجية.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <a
+            class="contact-item reveal"
+            href="https://github.com/KhaledElGendy27"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-icon">💻</span>
+            <span>
+              <small>GitHub</small>
+              <strong>KhaledElGendy27</strong>
+            </span>
+          </a>
+
+          <a
+            class="contact-item reveal"
+            href="https://wa.me/201021854798"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-icon">📱</span>
+            <span>
+              <small>WhatsApp</small>
+              <strong>تواصل معي على واتساب</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <div class="container">
       <p>
         © <span id="year"></span> Khaled ElGendy — جميع الحقوق محفوظة.
       </p>
       <p>Designed & Built with HTML, CSS and JavaScript.</p>
     </div>
-  </footer>  <script>
+  </footer>
+
+  <script>
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
@@ -835,7 +722,10 @@
       const isLight = document.body.classList.contains("light");
 
       document.querySelector('meta[name="theme-color"]')
-        .setAttribute("content", isLight ? "#f2f6fc" : "#07111f");
+        .setAttribute(
+          "content",
+          isLight ? "#f2f6fc" : "#07111f"
+        );
     });
 
     const revealObserver = new IntersectionObserver(
@@ -853,26 +743,6 @@
     document.querySelectorAll(".reveal").forEach(function (element) {
       revealObserver.observe(element);
     });
-
-    const skillObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            const bar = entry.target;
-            const level = Number(bar.dataset.level);
-
-            bar.style.width =
-              Math.max(0, Math.min(100, level)) + "%";
-
-            skillObserver.unobserve(bar);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    document.querySelectorAll(".bar-fill").forEach(function (bar) {
-      skillObserver.observe(bar);
-    });
-  </script></body>
+  </script>
+</body>
 </html>
