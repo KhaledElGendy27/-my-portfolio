@@ -1,32 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07111f">
+  <meta name="theme-color" content="#0B0B14">
   <meta name="description" content="الموقع الشخصي لخالد الجندي، طالب نظم ومعلومات ومطور واجهات ويب بخبرة سنتين.">
   <title>Khaled ElGendy | My Portfolio</title>
 
   <style>
     :root {
-      --bg: #07111f;
-      --panel: #0d1b2e;
-      --text: #f3f7ff;
-      --muted: #a8b6ca;
-      --accent: #39d5ff;
-      --accent2: #8b7cff;
-      --border: rgba(255,255,255,.1);
-      --shadow: 0 15px 45px rgba(0,0,0,.2);
+      --bg: #0B0B14;
+      --panel: #171725;
+      --text: #f3f0ff;
+      --muted: #B9B2CC;
+      --accent: #8B5CF6;
+      --accent2: #A78BFA;
+      --border: rgba(196,181,253,.14);
+      --shadow: 0 15px 45px rgba(0,0,0,.3);
     }
 
     body.light {
-      --bg: #f2f6fc;
+      --bg: #f7f5ff;
       --panel: #fff;
-      --text: #13243b;
-      --muted: #61718a;
-      --border: rgba(10,30,60,.12);
-      --shadow: 0 15px 45px rgba(30,60,100,.1);
+      --text: #211637;
+      --muted: #6f6485;
+      --accent: #6D28D9;
+      --accent2: #8B5CF6;
+      --border: rgba(109,40,217,.14);
+      --shadow: 0 15px 45px rgba(75,40,130,.1);
     }
 
     * {
@@ -126,8 +127,8 @@
     .tag {
       display: inline-block;
       color: var(--accent);
-      background: rgba(57,213,255,.09);
-      border: 1px solid rgba(57,213,255,.25);
+      background: rgba(139,92,246,.10);
+      border: 1px solid rgba(139,92,246,.28);
       padding: 5px 14px;
       border-radius: 30px;
       font-size: 13px;
@@ -177,8 +178,8 @@
     }
 
     .btn-primary {
-      background: linear-gradient(120deg, var(--accent), #6b8cff);
-      color: #04101d;
+      background: linear-gradient(120deg, var(--accent), var(--accent2));
+      color: #fff;
       border: 0;
     }
 
@@ -202,7 +203,7 @@
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       filter: blur(45px);
-      opacity: .22;
+      opacity: .25;
     }
 
     .profile img {
@@ -212,7 +213,7 @@
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid var(--accent);
-      box-shadow: 0 0 35px rgba(57,213,255,.22);
+      box-shadow: 0 0 35px rgba(139,92,246,.28);
       background: var(--panel);
     }
 
@@ -308,8 +309,8 @@
       margin-top: 12px;
       padding: 4px 10px;
       border-radius: 20px;
-      background: rgba(57,213,255,.1);
-      color: var(--accent);
+      background: rgba(139,92,246,.12);
+      color: var(--accent2);
       font-size: 12px;
     }
 
@@ -724,7 +725,7 @@
       document.querySelector('meta[name="theme-color"]')
         .setAttribute(
           "content",
-          isLight ? "#f2f6fc" : "#07111f"
+          isLight ? "#f7f5ff" : "#0B0B14"
         );
     });
 
